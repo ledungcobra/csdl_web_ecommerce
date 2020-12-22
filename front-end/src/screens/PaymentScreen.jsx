@@ -1,20 +1,19 @@
 import React from 'react';
 import BreadCrumb from "../components/Commons/BreadCrumb";
 import LeftBanner from "../components/HomeScreen/LeftBanner";
-import ProductRightBanner from "../components/ProductsScreen/ProductsRightBanner";
+import CheckoutRightBanner from "../components/CheckoutScreen/CheckoutRightBanner";
 
-const ProductsScreen = () => {
+const PaymentScreen = () => {
     return (
         <div>
-            <BreadCrumb title={'Products'}/>
+            <BreadCrumb title={'Checkout'} />
             <div className="banner">
                 <LeftBanner/>
-                <ProductRightBanner/>
+                <CheckoutRightBanner />
                 <div className="clearfix"/>
             </div>
         </div>
     );
 };
 
-
-export default ProductsScreen;
+export default PaymentScreen;

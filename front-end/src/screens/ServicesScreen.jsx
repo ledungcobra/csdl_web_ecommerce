@@ -3,6 +3,7 @@ import BreadCrumb from "../components/Commons/BreadCrumb";
 import LeftBanner from "../components/HomeScreen/LeftBanner";
 import AboutRightBanner from "../components/AboutScreen/AboutRightBanner";
 import TeamGallery from "../components/AboutScreen/TeamGallery";
+import ServicesRightBanner from "../components/ServicesScreen/ServicesRightBanner";
 
 const ServicesScreen = () => {
     return (
@@ -12,7 +13,6 @@ const ServicesScreen = () => {
                 <LeftBanner/>
                 <ServicesRightBanner />
                 <div className="clearfix"/>
-                <TeamGallery />
             </div>
 
         </div>

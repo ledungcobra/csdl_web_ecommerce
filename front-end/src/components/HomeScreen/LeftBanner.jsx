@@ -8,14 +8,14 @@ const LeftBanner = () => {
                     <button type="button" className="navbar-toggle collapsed navbar-toggle1"
                             data-toggle="collapse" data-target="#bs-megadropdown-tabs">
                         <span className="sr-only">Toggle navigation</span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
-                        <span className="icon-bar"></span>
+                        <span className="icon-bar"/>
+                        <span className="icon-bar"/>
+                        <span className="icon-bar"/>
                     </button>
                 </div>
                 <div className="collapse navbar-collapse" id="bs-megadropdown-tabs">
                     <ul className="nav navbar-nav nav_1">
-                        <li><a href="products.html">Branded Foods</a></li>
+                        <li><a href="/products">Branded Foods</a></li>
                         <li><a href="household.html">Households</a></li>
                         <li className="dropdown mega-dropdown active">
                             <a href="#" className="dropdown-toggle"

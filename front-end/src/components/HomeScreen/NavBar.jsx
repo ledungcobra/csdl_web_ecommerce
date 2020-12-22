@@ -15,7 +15,7 @@ const NavBar = () => {
             </div>
 
             <div className="product_list_header">
-                <form action="#" method="post" className="last">
+                <form action="/cart" method="post" className="last">
                     <fieldset>
                         <input type="hidden" name="cmd" value="_cart"/>
                         <input type="hidden" name="display" value="1"/>
@@ -32,8 +32,8 @@ const NavBar = () => {
                         <div className="mega-dropdown-menu">
                             <div className="w3ls_vegetables">
                                 <ul className="dropdown-menu drp-mnu">
-                                    <li><a href="login.html">Login</a></li>
-                                    <li><a href="login.html">Sign Up</a></li>
+                                    <li><a href="/login">Login</a></li>
+                                    <li><a href="/signup">Sign Up</a></li>
                                 </ul>
                             </div>
                         </div>

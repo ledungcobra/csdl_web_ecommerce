@@ -1,6 +1,9 @@
+*{
+    box-sizing: border-box;
+}
 main{
     min-height: 90vh;
-    
+    min-width: 100vw;
 }
 h1{
     font-size: 1.8rem;
