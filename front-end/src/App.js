@@ -4,7 +4,7 @@ import {BrowserRouter as Router, Route} from 'react-router-dom';
 
 import './bootstrap.min.css';
 import HomeScreen from './screens/HomeScreen';
-import NavBar from "./components/HomeScreen/NavBar";
+import NavBar from "./components/Commons/NavBar";
 import LogoProduct from "./components/HomeScreen/LogoProduct";
 import ProductsScreen from "./screens/ProductsScreen";
 import AboutScreen from "./screens/AboutScreen";

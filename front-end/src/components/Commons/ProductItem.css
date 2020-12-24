@@ -1,0 +1,12 @@
+.product-text{
+    width: 100%;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.product-item{
+    max-height: 100%;
+    margin-bottom: 20px;
+}

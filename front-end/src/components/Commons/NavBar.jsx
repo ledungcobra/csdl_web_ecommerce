@@ -22,21 +22,17 @@ const NavBar = () => {
                 </form>
             </div>
             <div className="w3l_header_right">
-                <ul>
-                    <li className="dropdown profile_details_drop">
-                        <a href="#" className="dropdown-toggle" data-toggle="dropdown"><i className="fas fa-user"
-                                                                                          aria-hidden="true"/><span
-                            className="caret"/></a>
-                        <div className="mega-dropdown-menu">
-                            <div className="w3ls_vegetables">
-                                <ul className="dropdown-menu drp-mnu">
-                                    <li><a href="/login">Login</a></li>
-                                    <li><a href="/signup">Sign Up</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+                <div className="dropdown">
+                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Dropdown button
+                    </button>
+                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <a className="dropdown-item" href="#">Action</a>
+                        <a className="dropdown-item" href="#">Another action</a>
+                        <a className="dropdown-item" href="#">Something else here</a>
+                    </div>
+                </div>
             </div>
             <div className="w3l_header_right1">
                 <h2><a href="mail.html">Contact Us</a></h2>

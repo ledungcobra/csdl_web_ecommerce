@@ -20,32 +20,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c834f459-fd85-412a-9ce8-a6ad75437f51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/AdProduct.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductItem.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductRow.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/config/db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/controllsers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/productController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/controllsers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/middleware/authMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/middleware/errorMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/middleware/errorMiddleware.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/productRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/userRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/utils/generateToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/utils/generateToken.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/TopProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/TopProducts.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductRow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductRow.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductsRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductsRightBanner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/reducers/productReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/reducers/productReducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,8 +60,8 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/front-end/src/components/EventScreen" />
       <recent name="$PROJECT_DIR$/front-end/src/components/Commons" />
+      <recent name="$PROJECT_DIR$/front-end/src/components/EventScreen" />
       <recent name="$PROJECT_DIR$/front-end/src/components/HomeScreen" />
       <recent name="$PROJECT_DIR$/front-end/public" />
       <recent name="$PROJECT_DIR$/front-end/public/images" />
@@ -112,6 +99,7 @@
       <workItem from="1608692097767" duration="620000" />
       <workItem from="1608732184625" duration="6520000" />
       <workItem from="1608750044106" duration="2616000" />
+      <workItem from="1608778186203" duration="5589000" />
     </task>
     <servers />
   </component>
@@ -225,15 +213,15 @@
       <screen x="0" y="23" width="1600" height="824" />
     </state>
     <state x="301" y="74" key="SettingsEditor/0.23.1600.824@0.23.1600.824" timestamp="1608527832613" />
-    <state x="996" y="325" width="574" height="522" key="find.popup" timestamp="1608750498796">
+    <state x="996" y="325" width="574" height="522" key="find.popup" timestamp="1608779802347">
       <screen x="0" y="23" width="1600" height="824" />
     </state>
-    <state x="996" y="325" width="574" height="522" key="find.popup/0.23.1600.824@0.23.1600.824" timestamp="1608750498796" />
+    <state x="996" y="325" width="574" height="522" key="find.popup/0.23.1600.824@0.23.1600.824" timestamp="1608779802347" />
     <state x="1046" y="370" width="596" height="522" key="find.popup/0.23.1680.869@0.23.1680.869" timestamp="1608225839804" />
-    <state x="465" y="171" width="670" height="676" key="search.everywhere.popup" timestamp="1608732595948">
+    <state x="465" y="171" width="670" height="676" key="search.everywhere.popup" timestamp="1608782968217">
       <screen x="0" y="23" width="1600" height="824" />
     </state>
     <state x="465" y="171" width="670" height="676" key="search.everywhere.popup/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608732595948" />
-    <state x="465" y="171" width="670" height="676" key="search.everywhere.popup/0.23.1600.824@0.23.1600.824" timestamp="1608690792092" />
+    <state x="465" y="171" width="670" height="676" key="search.everywhere.popup/0.23.1600.824@0.23.1600.824" timestamp="1608782968217" />
   </component>
 </project>

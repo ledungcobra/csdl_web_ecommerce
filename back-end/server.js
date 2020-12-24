@@ -7,7 +7,9 @@ const colors =require('colors');
 const productRoutes =require("./routes/productRoutes.js");
 const bodyParser = require('body-parser');
 const app = express();
-app.use(bodyParser.urlencoded({extended : true}));
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: false}));
 
 const PORT = process.env.PORT || 5000;
 
