@@ -1,6 +1,6 @@
 import React from 'react';
 import BreadCrumb from "../components/Commons/BreadCrumb";
-import LeftBanner from "../components/HomeScreen/LeftBanner";
+import LeftBanner from "../components/Commons/LeftBanner";
 import CheckoutRightBanner from "../components/CheckoutScreen/CheckoutRightBanner";
 
 const CheckoutScreen = () => {

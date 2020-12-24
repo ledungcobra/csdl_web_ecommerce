@@ -1,6 +1,6 @@
 import React from 'react';
 import BreadCrumb from "../components/Commons/BreadCrumb";
-import LeftBanner from "../components/HomeScreen/LeftBanner";
+import LeftBanner from "../components/Commons/LeftBanner";
 import AboutRightBanner from "../components/AboutScreen/AboutRightBanner";
 import TeamGallery from "../components/AboutScreen/TeamGallery";
 import ServicesRightBanner from "../components/ServicesScreen/ServicesRightBanner";

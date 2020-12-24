@@ -7,6 +7,8 @@ const colors =require('colors');
 const productRoutes =require("./routes/productRoutes.js");
 const bodyParser = require('body-parser');
 const app = express();
+const userRoutes = require('./routes/userRoutes');
+
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
@@ -14,8 +16,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 const PORT = process.env.PORT || 5000;
 
 
-app.use('/api',productRoutes);
-
+app.use('/api/products',productRoutes);
+app.use('/api/users/',userRoutes)
 
 app.use(notFound)
 app.use(errorHandler);

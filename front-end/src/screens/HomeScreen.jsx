@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import {Row, Col} from 'react-bootstrap';
-import LeftBanner from "../components/HomeScreen/LeftBanner";
+import LeftBanner from "../components/Commons/LeftBanner";
 import RightBanner from "../components/HomeScreen/RightBanner";
 import BottomBanner from "../components/HomeScreen/BannerBottom";
 import HotOffers from "../components/HomeScreen/HotOffer";
@@ -20,7 +20,6 @@ const HomeScreen = () => {
 
             }
         }
-
         axios.post('/api/products', {
             page: 1,
             limit:100
@@ -29,7 +28,6 @@ const HomeScreen = () => {
     },[]);
     return (
         <div>
-            <h1>{productHotOffers.length}</h1>
             <Row>
                 <Col md={12}>
                     <div className="banner">

@@ -8,6 +8,6 @@ const router = new express.Router();
  * POST route /api/products
  */
 
-router.post('/products', postGetProducts);
+router.post('/', postGetProducts);
 
 module.exports = router;

@@ -1,14 +1,22 @@
 import React from 'react'
+import Dropdown from "react-bootstrap/Dropdown";
 
 const NavBar = () => {
+
+    const logoutHandler = () => {
+
+        console.log('Logout');
+
+    }
     return (
         <div className="agileits_header">
             <div className="w3l_offers">
                 <a href="products.html">Today's special Offers !</a>
             </div>
 
-            <div className="w3l_search" >
-                <form action="#" method="post" onChange={()=>{}}>
+            <div className="w3l_search">
+                <form action="#" method="post" onChange={() => {
+                }}>
                     <input type="text" name="Product" placeholder="Search a product..."/>
                     <input type="submit" value=" "/>
                 </form>
@@ -22,17 +30,19 @@ const NavBar = () => {
                 </form>
             </div>
             <div className="w3l_header_right">
-                <div className="dropdown">
-                    <button className="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Dropdown button
-                    </button>
-                    <div className="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a className="dropdown-item" href="#">Action</a>
-                        <a className="dropdown-item" href="#">Another action</a>
-                        <a className="dropdown-item" href="#">Something else here</a>
-                    </div>
-                </div>
+                <Dropdown>
+                    <Dropdown.Toggle variant='link' className='' style={{color: "white"}}>
+                        <span style={{ color: "white" }}>
+                             <i className='fas fa-user fa-3x' id='dropdown-basic'/>
+                        </span>
+
+                    </Dropdown.Toggle>
+                    <Dropdown.Menu>
+                        <Dropdown.Item href="/login?login">Login</Dropdown.Item>
+                        <Dropdown.Item href="/login?signup">Sign Up</Dropdown.Item>
+                        <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>
+                    </Dropdown.Menu>
+                </Dropdown>
             </div>
             <div className="w3l_header_right1">
                 <h2><a href="mail.html">Contact Us</a></h2>

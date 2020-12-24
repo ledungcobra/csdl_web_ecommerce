@@ -1,5 +1,5 @@
 import React from 'react';
-import LeftBanner from "../components/HomeScreen/LeftBanner";
+import LeftBanner from "../components/Commons/LeftBanner";
 import BreadCrumb from "../components/Commons/BreadCrumb";
 import EventRightBanner from "../components/EventScreen/EventRightBanner";
 

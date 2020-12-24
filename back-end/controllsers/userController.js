@@ -1,6 +1,7 @@
-const asyncHandler =require("express-async-handler");
-const User =require('../models/userModel.js');
-const generateToken =require("../utils/generateToken.js");
+const db = require("../config/db");
+const asyncHandler = require("express-async-handler");
+const generateToken = require("../utils/generateToken.js");
+
 
 // @desc Auth user  & get token
 // @access Public
@@ -8,20 +9,40 @@ const generateToken =require("../utils/generateToken.js");
 const authUser = asyncHandler(async (req, res) => {
     const {email, password} = req.body;
 
-    const user = await User.findOne({email});
+    try {
+        const log = `SELECT CUSTOMER_EMAIL,CUSTOMER_ID,ID_CUSTOMER,CUSTOMER_PASSWORD
+         WHERE CUSTOMER_EMAIL = ${email} `;
 
-    if (user != null && (await user.comparePassword(password))) {
-        res.json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            isAdmin: user.isAdmin,
-            token: generateToken(user._id)
-        })
-    } else {
-        res.status(401);
-        throw new Error('Invalid email or password');
+
+        const {recordsets} = await db.sql.query(
+            `SELECT CUSTOMER_EMAIL,ID_CUSTOMER,CUSTOMER_PASSWORD
+                FROM CUSTOMER
+                WHERE CUSTOMER_EMAIL = '${email}'`
+        )
+        console.log(recordsets[0]);
+        if (recordsets[0].length > 0) {
+
+            if (recordsets[0][0]['CUSTOMER_PASSWORD'].trim() === password) {
+                res.json({
+                    token: generateToken(email),
+                    email,
+                    message: 'success'
+                });
+            } else {
+                res.status(401).json({
+                    message: 'Password or username does not match'
+                });
+            }
+
+        } else {
+            res.status(404).json({
+                message: 'User not found'
+            });
+        }
+    } catch (e) {
+        throw new Error('Error when authorizing!!' + e);
     }
+
 
 });
 
@@ -49,7 +70,7 @@ const registerUser = asyncHandler(async (req, res) => {
 
     const userExits = await User.findOne({email});
 
-    if(userExits){
+    if (userExits) {
         res.status(400);
         throw new Error('User already exists');
     }
@@ -60,7 +81,7 @@ const registerUser = asyncHandler(async (req, res) => {
         password
     });
 
-    if(user){
+    if (user) {
         res.status(201).json({
             _id: user._id,
             name: user.name,
@@ -68,16 +89,15 @@ const registerUser = asyncHandler(async (req, res) => {
             isAdmin: user.isAdmin,
             token: generateToken(user._id)
         });
-    }else{
+    } else {
         res.status(400);
         throw  new Error('Invalid user data');
     }
 
 
-
 });
 
-export {
+module.exports = {
     authUser,
     getUserProfile,
     registerUser

@@ -1,0 +1,35 @@
+.drop-down-button{
+    min-width: 100%;
+}
+
+.btn-hover{
+    background-color: white;
+    color: #0e0e0e;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.btn-hover:hover{
+    background-color: rgb(2,127,255);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 12;
+}
+
+.btn-hover:hover:before{
+
+    width: 0px;
+    height: 0px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 20px solid rgba(2,127,255,0.5);
+    position: absolute;
+    right: -20px;
+    content: "";
+
+}
