@@ -1,26 +1,16 @@
-import asyncHandler from "express-async-handler";
-import Product from '../models/productModel.js';
+const asyncHandler =require("express-async-handler");
+const db =require("../config/db.js");
 
 // @desc fetch all products
 // @access Public
-const getProducts = asyncHandler(async (req, res) => {
-    const products = await Product.find({}).lean()
-    res.json(products);
+module.exports.postGetProducts = asyncHandler(async (req, res,next) => {
+
+    const {limit,page} = req.body;
+    console.log(req.body);
+    const QUERY_STATEMENT = `SELECT TOP ${limit} * FROM GOODDETAIL OFFSET ${(page-1)*limit} ROWS`;
+    console.log(QUERY_STATEMENT)
+    const {recordsets} = await db.sql.query(QUERY_STATEMENT);
+
+    res.json(recordsets[0]);
 });
 
-// @routes GET /api/products
-const getProductById = asyncHandler(async (req, res) => {
-    const product = await Product.findById(req.params.id);
-    if (!product) {
-        res.status(404).json({message: 'Product not found'});
-        throw new Error('Product not found');
-    }
-    res.json(product);
-
-
-});
-
-export {
-    getProducts,
-    getProductById
-};

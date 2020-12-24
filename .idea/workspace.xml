@@ -20,35 +20,32 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c834f459-fd85-412a-9ce8-a6ad75437f51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/PaymentScreen/PaymentRightBanner.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/screens/CheckoutScreen.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/screens/PaymentScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/AdProduct.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductItem.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductRow.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/config/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/controllsers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/productController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/controllsers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/middleware/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/middleware/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/middleware/errorMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/middleware/errorMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/productRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/userRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/utils/generateToken.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/utils/generateToken.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/AboutScreen/AboutRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/AboutScreen/AboutRightBanner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/AboutScreen/TeamGallery.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/AboutScreen/TeamGallery.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/BreadCrumb.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/BreadCrumb.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/Footer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/Footer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/LeftBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/LeftBanner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/LogoProduct.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/LogoProduct.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/NewLetter.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/NewLetter.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/TopProducts.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/TopProducts.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Login/LoginRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Login/LoginRightBanner.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductsRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductsRightBanner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/ServicesScreen/ServicesRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/ServicesScreen/ServicesRightBanner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/styles/LogoProduct.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/styles/LogoProduct.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/AboutScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/AboutScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/EventScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/EventScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/reducers/productReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/reducers/productReducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/ProductsScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/ProductsScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/ServicesScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/ServicesScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +80,16 @@
       <recent name="$PROJECT_DIR$/front-end/public/images" />
     </key>
   </component>
+  <component name="RunManager">
+    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/back-end/server.js" working-dir="$PROJECT_DIR$/back-end">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Node.js.server.js" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -97,6 +104,14 @@
       <workItem from="1608525246556" duration="7501000" />
       <workItem from="1608557869845" duration="782000" />
       <workItem from="1608558714973" duration="3725000" />
+      <workItem from="1608601692993" duration="100000" />
+      <workItem from="1608618983368" duration="662000" />
+      <workItem from="1608619775554" duration="4602000" />
+      <workItem from="1608634460080" duration="599000" />
+      <workItem from="1608689751328" duration="2206000" />
+      <workItem from="1608692097767" duration="620000" />
+      <workItem from="1608732184625" duration="6520000" />
+      <workItem from="1608750044106" duration="2616000" />
     </task>
     <servers />
   </component>
@@ -122,18 +137,103 @@
     <state x="484" y="221" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1440.734/1440.-59.1440.787@0.23.1440.734" timestamp="1608560928941" />
     <state x="538" y="245" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1600.824@0.23.1600.824" timestamp="1608526525792" />
     <state x="565" y="257" key="#com.intellij.fileTypes.FileTypeChooser/0.23.1680.869@0.23.1680.869" timestamp="1608223399473" />
+    <state x="538" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608619220295">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state x="538" y="189" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.23.1600.824@0.23.1600.824" timestamp="1608619220295" />
+    <state width="1579" height="258" key="GridCell.Tab.0.bottom" timestamp="1608749940703">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.0.bottom/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176025" />
+    <state width="1579" height="258" key="GridCell.Tab.0.bottom/0.23.1600.824@0.23.1600.824" timestamp="1608749940703" />
+    <state width="1579" height="258" key="GridCell.Tab.0.center" timestamp="1608749940702">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.0.center/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176024" />
+    <state width="1579" height="258" key="GridCell.Tab.0.center/0.23.1600.824@0.23.1600.824" timestamp="1608749940702" />
+    <state width="1579" height="258" key="GridCell.Tab.0.left" timestamp="1608749940701">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.0.left/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176024" />
+    <state width="1579" height="258" key="GridCell.Tab.0.left/0.23.1600.824@0.23.1600.824" timestamp="1608749940701" />
+    <state width="1579" height="258" key="GridCell.Tab.0.right" timestamp="1608749940702">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.0.right/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176024" />
+    <state width="1579" height="258" key="GridCell.Tab.0.right/0.23.1600.824@0.23.1600.824" timestamp="1608749940702" />
+    <state width="1579" height="258" key="GridCell.Tab.1.bottom" timestamp="1608749940704">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.1.bottom/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176026" />
+    <state width="1579" height="258" key="GridCell.Tab.1.bottom/0.23.1600.824@0.23.1600.824" timestamp="1608749940704" />
+    <state width="1579" height="258" key="GridCell.Tab.1.center" timestamp="1608749940703">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.1.center/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176025" />
+    <state width="1579" height="258" key="GridCell.Tab.1.center/0.23.1600.824@0.23.1600.824" timestamp="1608749940703" />
+    <state width="1579" height="258" key="GridCell.Tab.1.left" timestamp="1608749940703">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.1.left/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176025" />
+    <state width="1579" height="258" key="GridCell.Tab.1.left/0.23.1600.824@0.23.1600.824" timestamp="1608749940703" />
+    <state width="1579" height="258" key="GridCell.Tab.1.right" timestamp="1608749940704">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.1.right/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176026" />
+    <state width="1579" height="258" key="GridCell.Tab.1.right/0.23.1600.824@0.23.1600.824" timestamp="1608749940704" />
+    <state width="1579" height="258" key="GridCell.Tab.2.bottom" timestamp="1608749940706">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.2.bottom/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176027" />
+    <state width="1579" height="258" key="GridCell.Tab.2.bottom/0.23.1600.824@0.23.1600.824" timestamp="1608749940706" />
+    <state width="1579" height="258" key="GridCell.Tab.2.center" timestamp="1608749940705">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.2.center/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176026" />
+    <state width="1579" height="258" key="GridCell.Tab.2.center/0.23.1600.824@0.23.1600.824" timestamp="1608749940705" />
+    <state width="1579" height="258" key="GridCell.Tab.2.left" timestamp="1608749940705">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.2.left/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176026" />
+    <state width="1579" height="258" key="GridCell.Tab.2.left/0.23.1600.824@0.23.1600.824" timestamp="1608749940705" />
+    <state width="1579" height="258" key="GridCell.Tab.2.right" timestamp="1608749940705">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.2.right/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176027" />
+    <state width="1579" height="258" key="GridCell.Tab.2.right/0.23.1600.824@0.23.1600.824" timestamp="1608749940705" />
+    <state width="1579" height="258" key="GridCell.Tab.3.bottom" timestamp="1608749940707">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.3.bottom/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176028" />
+    <state width="1579" height="258" key="GridCell.Tab.3.bottom/0.23.1600.824@0.23.1600.824" timestamp="1608749940707" />
+    <state width="1579" height="258" key="GridCell.Tab.3.center" timestamp="1608749940706">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.3.center/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176027" />
+    <state width="1579" height="258" key="GridCell.Tab.3.center/0.23.1600.824@0.23.1600.824" timestamp="1608749940706" />
+    <state width="1579" height="258" key="GridCell.Tab.3.left" timestamp="1608749940706">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.3.left/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176027" />
+    <state width="1579" height="258" key="GridCell.Tab.3.left/0.23.1600.824@0.23.1600.824" timestamp="1608749940706" />
+    <state width="1579" height="258" key="GridCell.Tab.3.right" timestamp="1608749940707">
+      <screen x="0" y="23" width="1600" height="824" />
+    </state>
+    <state width="1579" height="258" key="GridCell.Tab.3.right/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608733176028" />
+    <state width="1579" height="258" key="GridCell.Tab.3.right/0.23.1600.824@0.23.1600.824" timestamp="1608749940707" />
     <state x="301" y="74" key="SettingsEditor" timestamp="1608527832613">
       <screen x="0" y="23" width="1600" height="824" />
     </state>
     <state x="301" y="74" key="SettingsEditor/0.23.1600.824@0.23.1600.824" timestamp="1608527832613" />
-    <state x="996" y="325" width="568" height="522" key="find.popup" timestamp="1608533241388">
+    <state x="996" y="325" width="574" height="522" key="find.popup" timestamp="1608750498796">
       <screen x="0" y="23" width="1600" height="824" />
     </state>
-    <state x="996" y="325" width="568" height="522" key="find.popup/0.23.1600.824@0.23.1600.824" timestamp="1608533241388" />
+    <state x="996" y="325" width="574" height="522" key="find.popup/0.23.1600.824@0.23.1600.824" timestamp="1608750498796" />
     <state x="1046" y="370" width="596" height="522" key="find.popup/0.23.1680.869@0.23.1680.869" timestamp="1608225839804" />
-    <state x="465" y="171" width="670" height="676" key="search.everywhere.popup" timestamp="1608532650929">
+    <state x="465" y="171" width="670" height="676" key="search.everywhere.popup" timestamp="1608732595948">
       <screen x="0" y="23" width="1600" height="824" />
     </state>
-    <state x="465" y="171" width="670" height="676" key="search.everywhere.popup/0.23.1600.824@0.23.1600.824" timestamp="1608532650929" />
+    <state x="465" y="171" width="670" height="676" key="search.everywhere.popup/0.23.1600.824/1600.-59.1440.787@0.23.1600.824" timestamp="1608732595948" />
+    <state x="465" y="171" width="670" height="676" key="search.everywhere.popup/0.23.1600.824@0.23.1600.824" timestamp="1608690792092" />
   </component>
 </project>

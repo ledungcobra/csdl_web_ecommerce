@@ -1,10 +1,16 @@
-import React from 'react';
+import React,{useState, useEffect} from 'react';
+import { useSelector, useDispatch } from "react-redux";
 
 const TopProducts = () => {
+
+    const [i,setI] = useState(1);
+
+
+    ///HOoks
     return (
         <div className="fresh-vegetables">
             <div className="container">
-                <h3>Top Products</h3>
+                <h3>Top Products { i }</h3>
                 <div className="w3l_fresh_vegetables_grids">
                     <div className="col-md-3 w3l_fresh_vegetables_grid w3l_fresh_vegetables_grid_left">
                         <div className="w3l_fresh_vegetables_grid2">

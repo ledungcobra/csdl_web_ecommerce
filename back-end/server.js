@@ -1,29 +1,24 @@
-import express from 'express';
-import dotenv from 'dotenv';
-import connectDB from './config/db.js'
-import productRouter from './routes/productRoutes.js';
-import {notFound,errorHandler} from "./middleware/errorMiddleware.js";
-import userRouter from './routes/userRoutes.js';
-import colors from 'colors';
-
+const express =require('express');
+const dotenv =require('dotenv');
 dotenv.config();
-
-connectDB();
+const db = require('./config/db.js');
+const {notFound, errorHandler} =require("./middleware/errorMiddleware.js");
+const colors =require('colors');
+const productRoutes =require("./routes/productRoutes.js");
+const bodyParser = require('body-parser');
 const app = express();
-app.use(express.json());
+app.use(bodyParser.urlencoded({extended : true}));
 
 const PORT = process.env.PORT || 5000;
 
-app.get('/', (req, res) => {
-    res.send('Hello');
-});
-app.use('/api/products',productRouter);
-app.use('/api/users',userRouter);
+
+app.use('/api',productRoutes);
+
 
 app.use(notFound)
 app.use(errorHandler);
 
 app.listen(PORT, () => {
-    console.log(`Listening in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold );
+    console.log(`Listening in ${process.env.NODE_ENV} mode on port ${PORT}`.yellow.bold);
 })
 

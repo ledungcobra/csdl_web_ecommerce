@@ -1,18 +1,17 @@
-import mongoose from 'mongoose';
+const sql =  require('mssql');
+const result = {};
+const dotenv =require('dotenv');
+dotenv.config();
 
-const connectDB = async()=>{
-    try{
-    const conn = await mongoose.connect(process.env.MONGO_URI,{
-        useUnifiedTopology: true,
-        useNewUrlParser: true,
-        useCreateIndex: true
-    })
-    console.log(`Connecting to db successfully: ${conn.connection.host}`.cyan.underline);
-
-    }catch(e){
-        console.log(`Error : ${e}`.red.bold.underline);
-        process.exit(1);
+const connectDB = async () => {
+    try {
+        // make sure that any items are correctly URL encoded in the connection string
+        result.sql = await sql.connect(process.env.SQL_CONNECT_STRING);
+        console.log('DB connect success')
+    } catch (err) {
+        console.log('DB connect fail ' + err)
     }
 }
+connectDB();
 
-export default connectDB;
+module.exports = result;

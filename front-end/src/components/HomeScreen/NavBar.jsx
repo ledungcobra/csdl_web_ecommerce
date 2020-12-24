@@ -17,8 +17,6 @@ const NavBar = () => {
             <div className="product_list_header">
                 <form action="/cart" method="post" className="last">
                     <fieldset>
-                        <input type="hidden" name="cmd" value="_cart"/>
-                        <input type="hidden" name="display" value="1"/>
                         <input type="submit" name="submit" value="View your cart" className="button"/>
                     </fieldset>
                 </form>
@@ -43,7 +41,7 @@ const NavBar = () => {
             <div className="w3l_header_right1">
                 <h2><a href="mail.html">Contact Us</a></h2>
             </div>
-            <div className="clearfix"></div>
+            <div className="clearfix"/>
         </div>
     )
 }

@@ -15,7 +15,7 @@ const HotOffers = () => {
                                     <figure>
                                         <div className="snipcart-item block">
                                             <div className="snipcart-thumb">
-                                                <a href="single.html"><img title=" " alt=" " src="images/1.png"/></a>
+                                                <a href="single.html"><img title=" " alt=" " src="https://salt.tikicdn.com/cache/280x280/ts/product/95/f6/6b/f13db37590c0da067f92f42d1c495a9d.jpg"/></a>
                                                 <p>fortune sunflower oil</p>
                                                 <h4>$7.99 <span>$10.00</span></h4>
                                             </div>

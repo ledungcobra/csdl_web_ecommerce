@@ -16,7 +16,6 @@ const CheckoutRightBanner = () => {
                                 <th>Product</th>
                                 <th>Quality</th>
                                 <th>Product Name</th>
-
                                 <th>Price</th>
                                 <th>Remove</th>
                             </tr>
