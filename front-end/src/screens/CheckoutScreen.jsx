@@ -8,7 +8,6 @@ const CheckoutScreen = () => {
         <div>
             <BreadCrumb title={'Checkout'} />
             <div className="banner">
-                <LeftBanner/>
                 <CheckoutRightBanner />
                 <div className="clearfix"/>
             </div>

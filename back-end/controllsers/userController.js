@@ -1,44 +1,35 @@
-const db = require("../config/db");
 const asyncHandler = require("express-async-handler");
 const generateToken = require("../utils/generateToken.js");
+const {addNewCustomer} = require("../services/userService");
+const {checkIfExistCustomer} = require("../services/userService");
+const {getCustomerInfoDetail} = require("../services/userService");
+const {getCustomerAuth} = require("../services/userService");
 
 
 // @desc Auth user  & get token
 // @access Public
 //route POST api/users/login
-const authUser = asyncHandler(async (req, res) => {
+const authCustomer = asyncHandler(async (req, res) => {
     const {email, password} = req.body;
-
+    console.log(req.body)
     try {
-        const log = `SELECT CUSTOMER_EMAIL,CUSTOMER_ID,ID_CUSTOMER,CUSTOMER_PASSWORD
-         WHERE CUSTOMER_EMAIL = ${email} `;
 
+        const user = await getCustomerAuth(email);
 
-        const {recordsets} = await db.sql.query(
-            `SELECT CUSTOMER_EMAIL,ID_CUSTOMER,CUSTOMER_PASSWORD
-                FROM CUSTOMER
-                WHERE CUSTOMER_EMAIL = '${email}'`
-        )
-        console.log(recordsets[0]);
-        if (recordsets[0].length > 0) {
-
-            if (recordsets[0][0]['CUSTOMER_PASSWORD'].trim() === password) {
-                res.json({
-                    token: generateToken(email),
-                    email,
-                    message: 'success'
-                });
-            } else {
-                res.status(401).json({
-                    message: 'Password or username does not match'
-                });
-            }
+        if (user['CUSTOMER_PASSWORD'].trim() === password) {
+            res.json({
+                token: generateToken(email),
+                email,
+                message: 'success'
+            });
 
         } else {
-            res.status(404).json({
-                message: 'User not found'
+            res.status(401).json({
+                message: 'Password or username does not match'
             });
         }
+
+
     } catch (e) {
         throw new Error('Error when authorizing!!' + e);
     }
@@ -46,16 +37,18 @@ const authUser = asyncHandler(async (req, res) => {
 
 });
 
-const getUserProfile = asyncHandler(async (req, res) => {
 
-    const user = req.user;
+const getCustomerProfile = asyncHandler(async (req, res) => {
 
-    if (user != null) {
+    const customer = req.customer;
+
+    if (customer) {
         res.json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            isAdmin: user.isAdmin,
+            token: generateToken(customer),
+            status: 'ok',
+            customer: {
+                ...customer
+            }
         })
     } else {
         res.status(404);
@@ -64,41 +57,67 @@ const getUserProfile = asyncHandler(async (req, res) => {
 
 });
 
-const registerUser = asyncHandler(async (req, res) => {
+/**
+ *
+ * @type {*|express.RequestHandler}
+ *returns
+ * {
+email, password, name
+ }
+ */
 
-    const {email, password, name} = req.body;
+const registerCustomer = asyncHandler(async (req, res) => {
 
-    const userExits = await User.findOne({email});
+    const {phoneNumber, password, email, name, gender, birthday} = req.body;
 
-    if (userExits) {
+    const isExistCustomer = await checkIfExistCustomer(email);
+
+    if (isExistCustomer) {
         res.status(400);
-        throw new Error('User already exists');
+        throw new Error('Email already exists please take another email');
     }
 
-    const user = await User.create({
-        name,
-        email,
-        password
-    });
+    const result = await addNewCustomer(name, email, gender, password, phoneNumber, birthday);
 
-    if (user) {
+    if (result) {
         res.status(201).json({
-            _id: user._id,
-            name: user.name,
-            email: user.email,
-            isAdmin: user.isAdmin,
-            token: generateToken(user._id)
-        });
+            token: generateToken(email),
+            email
+        })
     } else {
-        res.status(400);
-        throw  new Error('Invalid user data');
+        res.status(400)
+        throw new Error('Cannot register new account');
     }
-
 
 });
 
+const putChangeCustomerProfile = asyncHandler(async (req, res) => {
+
+    const {phoneNumber, password, email, name, gender, birthday} = req.body;
+    try {
+
+        const result = await updateCustomer(name, email, gender, birthday, phoneNumber, password);
+
+        if (result) {
+            res.json({
+                token: generateToken(email),
+                email
+            })
+        } else {
+            res.status(404);
+            throw new Error('Customer not found')
+        }
+
+    } catch (e) {
+        throw  e;
+    }
+
+});
+
+
 module.exports = {
-    authUser,
-    getUserProfile,
-    registerUser
+    authCustomer,
+    getCustomerProfile,
+    registerCustomer,
+    putChangeCustomerProfile
 }

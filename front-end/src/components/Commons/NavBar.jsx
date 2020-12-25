@@ -1,12 +1,18 @@
 import React from 'react'
 import Dropdown from "react-bootstrap/Dropdown";
+import {Link} from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../../actions/userActions";
 
 const NavBar = () => {
 
+    const dispatch = useDispatch();
+    const {userInfo} = useSelector(state => state.user);
+
+    console.log(userInfo);
+
     const logoutHandler = () => {
-
-        console.log('Logout');
-
+        dispatch(logout());
     }
     return (
         <div className="agileits_header">
@@ -23,7 +29,7 @@ const NavBar = () => {
             </div>
 
             <div className="product_list_header">
-                <form action="/cart" method="post" className="last">
+                <form action="/cart" method="get" className="last">
                     <fieldset>
                         <input type="submit" name="submit" value="View your cart" className="button"/>
                     </fieldset>
@@ -32,13 +38,18 @@ const NavBar = () => {
             <div className="w3l_header_right">
                 <Dropdown>
                     <Dropdown.Toggle variant='link' className='' style={{color: "white"}}>
-                        <span style={{ color: "white" }}>
+                        <span style={{color: "white"}}>
                              <i className='fas fa-user fa-3x' id='dropdown-basic'/>
                         </span>
 
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
-                        <Dropdown.Item href="/login?login">Login</Dropdown.Item>
+                        <Dropdown.Item>
+                            {userInfo && userInfo.token ?
+                                <Link to='/profile'>Profile</Link>
+                            :
+                            <Link to='/login?login'>Login</Link>}
+                        </Dropdown.Item>
                         <Dropdown.Item href="/login?signup">Sign Up</Dropdown.Item>
                         <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>
                     </Dropdown.Menu>

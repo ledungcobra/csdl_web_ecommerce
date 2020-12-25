@@ -3,7 +3,7 @@ import React from 'react';
 const CheckoutRightBanner = () => {
     return (
         <div>
-            <div className="w3l_banner_nav_right">
+            <div >
                 <div className="privacy about">
                     <h3>Chec<span>kout</span></h3>
 
@@ -23,8 +23,7 @@ const CheckoutRightBanner = () => {
                             <tbody>
                             <tr className="rem1">
                                 <td className="invert">1</td>
-                                <td className="invert-image"><a href="single.html"><img src="images/1.png" alt=" "
-                                                                                        className="img-responsive"/></a>
+                                <td className="invert-image"><a href="single.html"><img src="images/1.png" alt=" " className="img-responsive"/></a>
                                 </td>
                                 <td className="invert">
                                     <div className="quantity">
@@ -36,19 +35,16 @@ const CheckoutRightBanner = () => {
                                     </div>
                                 </td>
                                 <td className="invert">Fortune Sunflower Oil</td>
-
                                 <td className="invert">$290.00</td>
                                 <td className="invert">
                                     <div className="rem">
                                         <div className="close1"/>
                                     </div>
-
                                 </td>
                             </tr>
                             <tr className="rem2">
                                 <td className="invert">2</td>
-                                <td className="invert-image"><a href="single.html"><img src="images/3.png" alt=" "
-                                                                                        className="img-responsive"/></a>
+                                <td className="invert-image"><a href="single.html"><img src="images/3.png" alt=" " className="img-responsive"/></a>
                                 </td>
                                 <td className="invert">
                                     <div className="quantity">
@@ -60,19 +56,16 @@ const CheckoutRightBanner = () => {
                                     </div>
                                 </td>
                                 <td className="invert">Basmati Rise (5 Kg)</td>
-
                                 <td className="invert">$250.00</td>
                                 <td className="invert">
                                     <div className="rem">
                                         <div className="close2"></div>
                                     </div>
-
                                 </td>
                             </tr>
                             <tr className="rem3">
                                 <td className="invert">3</td>
-                                <td className="invert-image"><a href="single.html"><img src="images/2.png" alt=" "
-                                                                                        className="img-responsive"/></a>
+                                <td className="invert-image"><a href="single.html"><img src="images/2.png" alt=" " className="img-responsive"/></a>
                                 </td>
                                 <td className="invert">
                                     <div className="quantity">
@@ -84,16 +77,13 @@ const CheckoutRightBanner = () => {
                                     </div>
                                 </td>
                                 <td className="invert">Pepsi Soft Drink (2 Ltr)</td>
-
                                 <td className="invert">$15.00</td>
                                 <td className="invert">
                                     <div className="rem">
                                         <div className="close3"></div>
                                     </div>
-
                                 </td>
                             </tr>
-
                             </tbody>
                         </table>
                     </div>
@@ -155,15 +145,12 @@ const CheckoutRightBanner = () => {
                                 </section>
                             </form>
                             <div className="checkout-right-basket">
-                                <a href="payment.html">Make a Payment <span
+                                <a href="/payment">Make a Payment <span
                                     className="glyphicon glyphicon-chevron-right" aria-hidden="true"/></a>
                             </div>
                         </div>
-
-                        <div className="clearfix"></div>
-
+                        <div className="clearfix"/>
                     </div>
-
                 </div>
             </div>
         </div>

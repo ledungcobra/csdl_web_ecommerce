@@ -1,8 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import BreadCrumb from "../components/Commons/BreadCrumb";
 import LeftBanner from "../components/Commons/LeftBanner";
-import EventRightBanner from "../components/EventScreen/EventRightBanner";
 import LoginRightBanner from "../components/Login/LoginRightBanner";
 
 const Login = ({location}) => {
