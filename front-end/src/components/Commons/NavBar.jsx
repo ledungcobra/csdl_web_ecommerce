@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import Dropdown from "react-bootstrap/Dropdown";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
@@ -9,10 +9,18 @@ const NavBar = () => {
     const dispatch = useDispatch();
     const {userInfo} = useSelector(state => state.user);
 
+    const [loggedIn,setLoggedIn] = useState(false);
+
+    useEffect(()=>{
+        if(userInfo && JSON.stringify(userInfo) !== JSON.stringify({})){
+            setLoggedIn(true)
+        }
+    },[userInfo])
     console.log(userInfo);
 
     const logoutHandler = () => {
         dispatch(logout());
+        window.location.reload();
     }
     return (
         <div className="agileits_header">
@@ -45,13 +53,15 @@ const NavBar = () => {
                     </Dropdown.Toggle>
                     <Dropdown.Menu>
                         <Dropdown.Item>
-                            {userInfo && userInfo.token ?
+                            {loggedIn?
                                 <Link to='/profile'>Profile</Link>
-                            :
-                            <Link to='/login?login'>Login</Link>}
+                                :
+                                <Link to='/login?login'>Login</Link>}
                         </Dropdown.Item>
                         <Dropdown.Item href="/login?signup">Sign Up</Dropdown.Item>
-                        <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>
+                        {
+                           loggedIn && <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>
+                        }
                     </Dropdown.Menu>
                 </Dropdown>
             </div>

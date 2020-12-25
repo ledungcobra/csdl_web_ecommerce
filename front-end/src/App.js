@@ -5,7 +5,6 @@ import {BrowserRouter as Router,Route} from 'react-router-dom';
 import './bootstrap.min.css';
 import HomeScreen from './screens/HomeScreen';
 import NavBar from "./components/Commons/NavBar";
-import LogoProduct from "./components/HomeScreen/LogoProduct";
 import ProductsScreen from "./screens/ProductsScreen";
 import AboutScreen from "./screens/AboutScreen";
 import EventScreen from "./screens/EventScreen";
@@ -22,7 +21,6 @@ function App() {
     return (
         <Router>
             <NavBar/>
-            <LogoProduct />
             <main>
                 <Route path='/' component={HomeScreen} exact/>
                 <Route path='/products' component={ProductsScreen}/>
