@@ -13,6 +13,7 @@ const HotOffers = ({offers}) => {
                         offers.map((prod, index) => (
                             <div>
                                 <ProductItem key={index}
+                                             productId = {prod.Id_Good}
                                              imageUrl={prod.Thumbnail_URL}
                                              currentPrice={prod.GD_Price}
                                              productName={prod.GD_Name}

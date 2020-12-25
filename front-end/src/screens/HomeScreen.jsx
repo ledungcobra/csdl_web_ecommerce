@@ -22,7 +22,7 @@ const HomeScreen = () => {
         }
         axios.post('/api/products', {
             page: 1,
-            limit:100
+            limit:3
         },config).then(r => setProductsHotOffers(r.data)).catch(e=> console.log(e));
 
     },[]);

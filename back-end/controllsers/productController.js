@@ -1,4 +1,5 @@
 const asyncHandler = require("express-async-handler");
+const {getProduct} = require("../services/productsService");
 const {getProducts}  = require('../services/productsService');
 
 // @desc fetch all products
@@ -14,4 +15,9 @@ module.exports.postGetProducts = asyncHandler(
 
     })
 ;
+module.exports.getProduct = asyncHandler(async(req,res)=>{
+
+    const result = await getProduct(req.body.id);
+    res.json(result);
+})
 

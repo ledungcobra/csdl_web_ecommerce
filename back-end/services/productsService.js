@@ -14,4 +14,17 @@ module.exports.getProducts = (page, limit) => {
 
     });
 }
+module.exports.getProduct = (id) => {
+
+    return new Promise((res, rej) => {
+        const QUERY_STATEMENT = `SELECT * FROM GOODPRESENTED where ID_GOOD = ${id.productId}`;
+        db.sql.query(QUERY_STATEMENT)
+            .then(({recordsets})=> {
+                res(recordsets[0])
+            })
+            .catch(e => rej(e));
+
+    });
+}
+
 
