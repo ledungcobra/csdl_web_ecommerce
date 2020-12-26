@@ -28,10 +28,6 @@ const NavBar = () => {
     }
     return (
         <div className="agileits_header">
-            <div className="w3l_offers">
-                <a href="products.html">Today's special Offers !</a>
-            </div>
-
             <div className="w3l_search">
                 <form action="/search" method="get" onChange={() => {
                 }}>
@@ -86,9 +82,7 @@ const NavBar = () => {
 
 
             </div>
-            <div className="w3l_header_right1">
-                <h2><a href="mail.html">Contact Us</a></h2>
-            </div>
+
             <div className="clearfix" />
         </div>
     )

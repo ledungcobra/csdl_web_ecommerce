@@ -19,6 +19,9 @@ const SignUpForm = props => {
     const [success,setSuccess] = useState(false);
     const {loading, userInfo, error} = useSelector(state => state.userRegister);
 
+    const [formData,setFormData] = useState({});
+
+
     const dispatch = useDispatch();
 
     useEffect(()=>{
@@ -41,7 +44,7 @@ const SignUpForm = props => {
                    value={username}
                    onChange={(e) => setUsername(e.target.value)}
             />
-            <input type="email" name="email" placeholder="Email Address" required=" "
+            <input autoComplete type="email" name="email" placeholder="Email Address" required=" "
                    value={email}
                    onChange={(e) => setEmail(e.target.value)}
             />
