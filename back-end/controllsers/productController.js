@@ -1,5 +1,7 @@
 const asyncHandler = require("express-async-handler");
-const {getProducts} = require('../services/productsService');
+const {getProductDetail} = require("../services/productsService");
+const {getProducts} = require("../services/productsService");
+const {getProducts1} = require('../services/productsService');
 const {getProduct} = require("../services/productsService");
 
 // @desc fetch all products
@@ -10,7 +12,7 @@ module.exports.postGetProducts = asyncHandler(
         let limit = parseInt(req.body.limit);
         let page = parseInt(req.body.page);
 
-        const result = await getProducts(page, limit);
+        const result = await getProducts1(page, limit);
         res.json(result);
 
     })
@@ -41,6 +43,7 @@ module.exports.getProducts = asyncHandler(async (req, res) => {
 
 module.exports.getProductByID = asyncHandler(async (req, res) => {
     const { id } = req.params;
-    const {product} = await getProductDetail
+    const product = await getProductDetail(id);
+    res.json(product);
 });
 

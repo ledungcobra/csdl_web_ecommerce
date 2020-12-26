@@ -1,6 +1,6 @@
 const db = require('../config/db');
 
-module.exports.getProducts = (page, limit) => {
+module.exports.getProducts1 = (page, limit) => {
 
     return new Promise((res, rej) => {
 
@@ -17,7 +17,7 @@ module.exports.getProducts = (page, limit) => {
 module.exports.getProduct = (id) => {
 
     return new Promise((res, rej) => {
-        const QUERY_STATEMENT = `SELECT * FROM GOODPRESENTED where ID_GOOD = ${id}`;
+        const QUERY_STATEMENT = `SELECT * FROM GOODDETAIL where ID_GD = ${id}`;
         db.sql.query(QUERY_STATEMENT)
             .then(({recordsets})=> {
                 if (recordsets[0].length > 0) {
@@ -60,3 +60,21 @@ module.exports.getProducts = (keyword, page, limit) => {
     });
 }
 
+module.exports.getProductDetail = (id) => {
+
+    return new Promise((res, rej) => {
+        const QUERY_STATEMENT = `SELECT * FROM Gooddetail where ID_GOOD = ${id}`;
+        db.sql.query(QUERY_STATEMENT)
+            .then(({recordsets})=> {
+
+                if (recordsets[0].length > 0) {
+                    res(recordsets[0])
+                }
+                else {
+                    res(recordsets[0][0])
+                }
+            })
+            .catch(e => rej(e));
+
+    });
+}

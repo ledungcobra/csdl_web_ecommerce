@@ -28,14 +28,7 @@ const ProductItem = ({product}) => {
                                     <img src={product.imageUrl} alt=" "
                                          className="img-responsive"/>
                                     <p className='product-text'>{product.productName}</p>
-                                    <h4>{product.currentPrice}<span>{product.stockPrice}</span></h4>
-                                </div>
-                                <div className="snipcart-details">
-
-                                    <FormAddCart
-                                        key={product.productId}
-                                        productId={product.productId}/>
-
+                                    <h4>{parseInt(product.currentPrice/1000)*1000}<span>{parseInt(product.stockPrice/1000)*1000}</span></h4>
                                 </div>
                             </div>
                         </figure>

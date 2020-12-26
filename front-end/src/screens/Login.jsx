@@ -11,7 +11,6 @@ const Login = ({location}) => {
         <div>
         <BreadCrumb title={'Login'} />
             <div className="banner">
-                <LeftBanner/>
                 <LoginRightBanner isLogin = {isLogin}/>
                 <div className="clearfix"/>
 
