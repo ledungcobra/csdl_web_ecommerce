@@ -17,13 +17,15 @@ module.exports.getCart=(customerID)=>{
     })
 }
 
-module.exports.postCart = (customerID)=>{
-    const dataCart = JSON.parse(localStorage.getItem("cartItems"));
-    dataCart.map((data)=>{
-        db.sql.query(
-            `Insert Into Good_Cart(Id_GD,Id_Customer,GC_Number)
-                Values(${data.product}, ${customerID}, ${data.qty}`
-        ).then(({recordsets}) => {
-            console.log(recordsets);}).catch(e => console.log(e));
+module.exports.postCart = (cartItems,userid)=>{
+    return new Promise((res, rej)=> {
+        let query = `Insert into Good_cart (id_gd,id_customer, product_Number) values `;
+
+        query+= cartItems.reduce((acc,data)=>acc+ `(${data.product},${userid},${data.qty} ),`,'');
+        query = query.slice(0,query.length-1);
+
+        db.sql.query( query ).then( () => { res()} ).catch((e) => {rej(e)} )
+
+
     })
 }

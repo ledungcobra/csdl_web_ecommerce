@@ -7,7 +7,7 @@ import FormAddCart from './FormAddCart'
 
 
 const ProductItem = ({product}) => {
-    console.log(product);
+
     const history = useHistory();
 
     const onClickProductHandler = (e) => {
@@ -27,8 +27,9 @@ const ProductItem = ({product}) => {
                                 <div className="snipcart-thumb" onClick={onClickProductHandler}>
                                     <img src={product.imageUrl} alt=" "
                                          className="img-responsive"/>
-                                    <p className='product-text'>{product.productName}</p>
-                                    <h4>{parseInt(product.currentPrice/1000)*1000}<span>{parseInt(product.stockPrice/1000)*1000}</span></h4>
+                                    <p className='product-text text-center'>{product.productName}</p>
+                                    <h4 className='text-center text-danger'><span className='text-dark'>{(product.stockPrice)}</span>   -{product.discount}%</h4>
+                                    <h4 className='text-center'>{(product.currentPrice)}</h4>
                                 </div>
                             </div>
                         </figure>

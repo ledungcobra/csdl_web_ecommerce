@@ -27,7 +27,7 @@ const LoginRightBanner = ({isLogin, location}) => {
     }
 
     return (
-        <div className="w3l_banner_nav_right">
+        <div className="">
             <div className="w3_login">
 
                 <h3>{isLogin ? 'Login' : 'SignUp'}</h3>

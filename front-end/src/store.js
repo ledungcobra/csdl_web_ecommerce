@@ -19,6 +19,8 @@ const reducer = combineReducers({
 
 const userFromStorage = localStorage.getItem("userInfo")? JSON.parse(localStorage.getItem("userInfo")):{};
 const cart = localStorage.getItem("cartItems")?JSON.parse(localStorage.getItem("cartItems")):[];
+const totalPrice = cart? cart.reduce((acc,item)=>acc+ Math.floor(+item.qty*+item.price*(100-item.discount)/100000)*1000 ,0):0;
+
 const initialState = {
     productList: [],
     user:{
@@ -30,7 +32,9 @@ const initialState = {
         products:[]
     },
     cart:{
-        cartItems: cart}
+        cartItems: cart,
+        totalPrice
+    }
 
 }
 

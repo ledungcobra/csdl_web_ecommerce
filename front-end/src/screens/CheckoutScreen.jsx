@@ -2,15 +2,14 @@ import React from 'react';
 import BreadCrumb from "../components/Commons/BreadCrumb";
 import LeftBanner from "../components/Commons/LeftBanner";
 import CheckoutRightBanner from "../components/CheckoutScreen/CheckoutRightBanner";
+import HorizontalLinearStepper from "../components/Commons/Stepper";
 
 const CheckoutScreen = () => {
     return (
         <div>
             <BreadCrumb title={'Checkout'} />
-            <div className="banner">
-                <CheckoutRightBanner />
-                <div className="clearfix"/>
-            </div>
+            <HorizontalLinearStepper />
+
         </div>
     );
 };

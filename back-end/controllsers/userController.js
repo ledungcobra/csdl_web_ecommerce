@@ -17,12 +17,14 @@ const authCustomer = asyncHandler(async (req, res) => {
         const user = await getCustomerAuth(email);
         console.log("get user" + user)
         if (user['CUSTOMER_PASSWORD'].trim() === password) {
-            const {CUSTOMER_NAME} = user;
+            const {CUSTOMER_NAME,ID_CUSTOMER} = user;
             res.json({
                 token: generateToken(email),
                 email,
                 name: CUSTOMER_NAME,
-                message: 'success'
+                message: 'success',
+                id:ID_CUSTOMER
+
             });
 
         } else {

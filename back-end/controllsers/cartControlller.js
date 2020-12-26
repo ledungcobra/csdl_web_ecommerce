@@ -1,20 +1,21 @@
 const asyncHandler = require("express-async-handler");
-const {postCart} = require("../services/CartService");
-const {getCart} = require("../services/CartService");
+const service = require("../services/CartService");
+
 
 // @desc fetch all products
 // @access Public
-module.exports.postCart = asyncHandler(
-    async (req, res) => {
+module.exports.postCart1 = asyncHandler(async(req,res)=>{
 
-        const result = await postCart(req.body.id);
-        res.json(result);
+    const user= req.body.user;
 
-    })
-;
+    const {cart} = req.body;
+    const result = await service.postCart(cart,user);
+    res.json(result);
+})
+
 module.exports.getCart = asyncHandler(async(req,res)=>{
     console.log(req.body);
-    const result = await getCart(req.body.id);
+    const result = await service.getCart(req.body.id);
     res.json(result);
 })
 

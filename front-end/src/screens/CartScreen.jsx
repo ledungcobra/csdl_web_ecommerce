@@ -2,7 +2,12 @@ import React, {useEffect, useState} from 'react';
 import store from "../store";
 import RowInCart from "../components/CheckoutScreen/RowInCart";
 import {useSelector} from "react-redux";
+import BreadCrumb from "../components/Commons/BreadCrumb";
+import {Link} from "react-router-dom";
 
+
+import './CartScreen.css';
+import {Col, Row} from "react-bootstrap";
 
 const data = JSON.parse( localStorage.getItem("cartItems"));
 console.log(typeof data);
@@ -12,16 +17,20 @@ const CartScreen = () => {
 
 
 
-    const {cartItems} = useSelector(state=>state.cart);
+    const {cartItems,totalPrice} = useSelector(state=>state.cart);
+    const {userInfo:{id}} = useSelector(state=>state.user);
+
+    console.log("Hello "+ id)
 
     const decreaseItem = (id)=>{
         console.log('Debugger helloworld')
     }
 
-    console.log('Render cart screen');
+
 
     return (
-        <div>
+        <div className='d-flex flex-column'>
+            <BreadCrumb title={'Cart'} />
             <table className="timetable_sub">
                 <thead>
                 <tr>
@@ -51,6 +60,14 @@ const CartScreen = () => {
 
                 </tbody>
             </table>
+            <Row>
+                <Col/>
+                <Col md={3}>
+                    {totalPrice}
+                </Col>
+
+            </Row>
+            <Link to={'/checkout'}  className='btn-primary my-3 mr-5 py-2 px-2 align-content-end align-self-end' style={{width:"100px"}}> Check Out</Link>
         </div>
     );
 };
