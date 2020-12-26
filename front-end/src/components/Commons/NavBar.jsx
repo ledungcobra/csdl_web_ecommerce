@@ -3,7 +3,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import {Link} from "react-router-dom";
 import {useDispatch, useSelector} from "react-redux";
 import {logout} from "../../actions/userActions";
-
+import './NavBar.css'
 const NavBar = () => {
 
     const dispatch = useDispatch();
@@ -30,8 +30,9 @@ const NavBar = () => {
 
             <div className="product_list_header">
                 <form action="/cart" method="get" className="last">
-                    <fieldset>
+                    <fieldset style={{position: "relative"}}>
                         <input type="submit" name="submit" value="View your cart" className="button"/>
+                        <span  id='cart-count'>1</span>
                     </fieldset>
                 </form>
             </div>
@@ -47,8 +48,8 @@ const NavBar = () => {
                         <Dropdown.Item>
                             {userInfo && userInfo.token ?
                                 <Link to='/profile'>Profile</Link>
-                            :
-                            <Link to='/login?login'>Login</Link>}
+                                :
+                                <Link to='/login?login'>Login</Link>}
                         </Dropdown.Item>
                         <Dropdown.Item href="/login?signup">Sign Up</Dropdown.Item>
                         <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>

@@ -1,8 +1,19 @@
-import {CART_ADD_ITEM, CART_REDUCE_ITEM, CART_REMOVE_ITEM} from '../constants/cartConstants';
+import {
+    CART_ADD_ITEM_REQUEST,
+    CART_ADD_ITEM_SUCCESS,
+    CART_REDUCE_ITEM,
+    CART_REMOVE_ITEM
+} from '../constants/cartConstants';
 
 export const cartReducer = (state = {cartItems: []}, action) => {
     switch (action.type) {
-        case CART_ADD_ITEM:
+
+        case CART_ADD_ITEM_REQUEST:
+            return {
+                ...state,
+                loading: true
+            }
+        case CART_ADD_ITEM_SUCCESS:
             const item = action.payload;
 
             const existItem = state.cartItems.find (x => x.product === item.product);
@@ -10,6 +21,7 @@ export const cartReducer = (state = {cartItems: []}, action) => {
             if (existItem) {
                 return {
                     ...state,
+                    loading: false,
                     cartItems: state.cartItems.map(x => {
                         if(x.product === existItem.product){
                             x.qty ++;
@@ -21,6 +33,8 @@ export const cartReducer = (state = {cartItems: []}, action) => {
             } else {
                 return {
                     ...state,
+                    loading: false,
+
                     cartItems: [...state.cartItems, item]
                 }
             }
@@ -42,8 +56,7 @@ export const cartReducer = (state = {cartItems: []}, action) => {
                 }
             } else {
                 return {
-                    ...state,
-                    cartItems: [...state.cartItems, item_reduce]
+                    ...state
                 }
             }
         case CART_REMOVE_ITEM:

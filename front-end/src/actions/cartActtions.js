@@ -1,6 +1,12 @@
 import axios from 'axios';
 
-import {CART_ADD_ITEM, CART_ADD_ITEM_FAIL, CART_REDUCE_ITEM, CART_REMOVE_ITEM} from "../constants/cartConstants";
+import {
+    CART_ADD_ITEM_REQUEST,
+    CART_ADD_ITEM_FAIL,
+    CART_ADD_ITEM_SUCCESS,
+    CART_REDUCE_ITEM,
+    CART_REMOVE_ITEM
+} from "../constants/cartConstants";
 import {USER_LOGIN_FAIL} from "../constants/userContaints";
 
 export const addToCart = (id) => async (dispatch, getState) => {
@@ -13,13 +19,15 @@ export const addToCart = (id) => async (dispatch, getState) => {
 
 
     try {
+        dispatch({
+            type: CART_ADD_ITEM_REQUEST,
+        });
+
         const {data} = await
             axios.post(`/api/products/addCart`, {id},
                 config);
-
-
         dispatch({
-            type: CART_ADD_ITEM,
+            type: CART_ADD_ITEM_SUCCESS,
             payload: {
                 product: data[0].Id_Good
                 , name: data[0].GD_Name,
@@ -70,6 +78,7 @@ export const reduceToCart = (id) => async (dispatch, getState) => {
             }
         });
         localStorage.setItem('cartItems', JSON.stringify(getState().cart.cartItems));
+
     }catch (error) {
         dispatch({
             type: CART_ADD_ITEM_FAIL,

@@ -5,18 +5,18 @@ import {useDispatch} from "react-redux";
 import {addToCart} from "../../actions/cartActtions";
 import ProductItem from "./ProductItem";
 
-const FormAddCart = ({productId}) =>{
+const FormAddCart = ({productId}) => {
     const dispatch = useDispatch();
 
 
-    const addToCartHandler =  (e) =>{
+    const addToCartHandler = (e) => {
         e.preventDefault();
         dispatch(addToCart(productId));
 
     }
     console.log(productId);
-    return(
-        <form action="#" method="post" onSubmit={addToCartHandler}>
+    return (
+        <form action="#" method="post" onSubmit={(e)=>{e.preventDefault();}}>
             <fieldset>
                 <input type="hidden" name="cmd" value="_cart"/>
                 <input type="hidden" name="add" value="1"/>
@@ -28,9 +28,10 @@ const FormAddCart = ({productId}) =>{
                 <input type="hidden" name="currency_code" value="USD"/>
                 <input type="hidden" name="return" value=" "/>
                 <input type="hidden" name="cancel_return" value=" "/>
-                <input type="submit"  name="submit" value="Add to cart"
-                       className="button"/>
+
             </fieldset>
+            <input type="submit" name="submit" value="Add to cart"
+                                 className="button" onClick={addToCartHandler}/>
         </form>
     );
 }

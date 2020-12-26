@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,29 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c834f459-fd85-412a-9ce8-a6ad75437f51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/back-end/controllsers/cartControlller.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end/controllsers/typeController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end/routes/cartRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end/routes/typeRouters.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end/services/CartService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end/services/typeService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/RowInCart.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/Commons/TypeTable.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_11_15_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_11_15_AM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/config/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/controllsers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/productController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/controllsers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/services/productsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/services/productsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/actions/cartActtions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/actions/cartActtions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/RowInCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/RowInCart.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/FormAddCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/FormAddCart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/LeftBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/LeftBanner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/constants/cartConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/constants/cartConstants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" afterDir="false" />
@@ -80,7 +67,10 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
@@ -134,6 +124,7 @@
       <workItem from="1608816262361" duration="599000" />
       <workItem from="1608828021438" duration="1756000" />
       <workItem from="1608830158582" duration="6903000" />
+      <workItem from="1608962673141" duration="6811000" />
     </task>
     <servers />
   </component>

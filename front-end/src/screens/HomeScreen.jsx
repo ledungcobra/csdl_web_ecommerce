@@ -27,14 +27,28 @@ const HomeScreen = () => {
         }, config).then(r => setProductsHotOffers(r.data)).catch(e => console.log(e));
 
     }, []);
-    const {error} = useSelector(state => state.cart)
+    const {error,loading } = useSelector(state => state.cart);
+
     useEffect(() => {
         if (error) {
             window.alert(error);
         }
+
+
     }, [error])
 
+    useEffect(() => {
+        console.log("first"+loading)
+        if (loading) {
+            window.alert('Add product successfully');
+            console.log("second"+loading);
+        }
+
+
+    }, [loading])
+
     return (
+
         <div>
             <Row>
                 <Col>
