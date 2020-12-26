@@ -15,3 +15,19 @@ module.exports.postGetProducts = asyncHandler(
     })
 ;
 
+
+module.exports.getProducts = asyncHandler(async (req,res)=>{
+    const limit = parseInt(req.query.limit);
+    const page = parseInt(req.query.page);
+    const keyword = req.query.keyword;
+
+    try{
+
+        const result = await getProducts(keyword,page,limit);
+        res.json(result);
+
+    }catch (e){
+        res.status(400);
+        throw new Error('Oops there is no products here');
+    }
+});

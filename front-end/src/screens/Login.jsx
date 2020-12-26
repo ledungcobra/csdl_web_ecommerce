@@ -9,14 +9,13 @@ const Login = ({location}) => {
 
     return (
         <div>
-            <BreadCrumb title={'Login'} />
+        <BreadCrumb title={'Login'} />
             <div className="banner">
                 <LeftBanner/>
                 <LoginRightBanner isLogin = {isLogin}/>
                 <div className="clearfix"/>
 
             </div>
-
         </div>
     );
 };

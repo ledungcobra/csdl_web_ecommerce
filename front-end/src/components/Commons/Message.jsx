@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Message = ({show, message, variant}) => {
     return (
         <div>
-            {show && <span className={variant}>{message}</span>}
+            {show && <div style={{textAlign:"center"}} className={`${variant} py-5`}>{message}</div>}
         </div>
     );
 };

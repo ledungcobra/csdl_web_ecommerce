@@ -12,6 +12,7 @@ import Login from "./screens/Login";
 import ServicesScreen from "./screens/ServicesScreen";
 import CheckoutScreen from "./screens/CheckoutScreen";
 import PaymentScreen from "./screens/PaymentScreen";
+import SearchScreen from "./screens/SearchScreen";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                 <Route path='/services' component={ServicesScreen}/>
                 <Route path='/cart' component={CheckoutScreen}/>
                 <Route path='/payment' component={ PaymentScreen }/>
+                <Route path='/search' component={SearchScreen} />
             </main>
             <Footer/>
         </Router>
