@@ -22,6 +22,7 @@
     <list default="true" id="c834f459-fd85-412a-9ce8-a6ad75437f51" name="Default Changelist" comment="">
       <change afterPath="$PROJECT_DIR$/front-end/src/screens/SingleProductScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/controllsers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/productController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/productRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/public/index.html" afterDir="false" />
@@ -101,7 +102,7 @@
       <workItem from="1608881912829" duration="7455000" />
       <workItem from="1608905759064" duration="10310000" />
       <workItem from="1608949842290" duration="4873000" />
-      <workItem from="1608965487751" duration="1265000" />
+      <workItem from="1608965487751" duration="1701000" />
     </task>
     <servers />
   </component>
