@@ -14,12 +14,15 @@ import CheckoutScreen from "./screens/CheckoutScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import SearchScreen from "./screens/SearchScreen";
 import SingleProductScreen from "./screens/SingleProductScreen";
+import CartScreen from "./screens/CartScreen";
 
 
 function App() {
 
     //Clear warning
     // console.log = console.warn = console.error = () => {};
+    const data = localStorage.getItem("cartItems");
+    console.log(data);
     return (
         <Router>
             <NavBar/>
@@ -30,10 +33,11 @@ function App() {
                 <Route path='/about' component={AboutScreen}/>
                 <Route path='/login' component={Login} />
                 <Route path='/services' component={ServicesScreen}/>
-                <Route path='/cart' component={CheckoutScreen}/>
+                <Route path='/checkout' component={CheckoutScreen}/>
                 <Route path='/payment' component={ PaymentScreen }/>
                 <Route path='/search' component={SearchScreen} />
                 <Route exact path='/product/:id' component={SingleProductScreen}/>
+                <Route path='/cart' component={ CartScreen}/>
             </main>
             <Footer/>
         </Router>

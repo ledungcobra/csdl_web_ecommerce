@@ -1,3 +1,19 @@
-.user-avatar{
+#cart-count:after{
+    content: "";
+    background-color: rgba(255,0,0,0.5);
+    width: 13px;
+    height: 13px;
+    right: 0px;
+    top: 5px;
+    position: absolute;
+    border-radius: 50%;
+}
+#cart-count{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    z-index: 20;
+    fontStyle: bold;
+    font-size: 10px;
 
 }

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
@@ -20,21 +23,67 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c834f459-fd85-412a-9ce8-a6ad75437f51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/screens/SingleProductScreen.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_11_15_AM_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_11_15_AM_[Default_Changelist]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_11_15_AM__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_1_56_PM_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_1_56_PM_[Default_Changelist]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_1_56_PM__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_1_57_PM_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_1_57_PM_[Default_Changelist]1/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_1_57_PM__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_1_57_PM__Default_Changelist_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_2_05_PM_[Default_Changelist]/shelved.patch" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_2_05_PM__Default_Changelist_.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/controllsers/cartControlller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/controllsers/typeController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/routes/cartRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/routes/typeRouters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/services/CartService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/services/typeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/RowInCart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/Commons/FormAddCart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/Commons/TypeTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/config/db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/controllsers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/productController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/controllsers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/userController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/productRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/services/productsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/services/productsService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/SearchScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/SearchScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/actions/cartActtions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/actions/cartActtions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/LeftBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/LeftBanner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/constants/cartConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/constants/cartConstants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="leftBanner" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1ln64Z57tqhNS41sIeR9k44Ecpx" />
@@ -48,6 +97,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
@@ -55,11 +110,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Tai lieu\CSDLNC\csdl_web_eco" />
       <recent name="$PROJECT_DIR$/front-end/src/components/Commons" />
       <recent name="$PROJECT_DIR$/front-end/src/components/EventScreen" />
       <recent name="$PROJECT_DIR$/front-end/src/components/HomeScreen" />
       <recent name="$PROJECT_DIR$/front-end/public" />
-      <recent name="$PROJECT_DIR$/front-end/public/images" />
     </key>
   </component>
   <component name="RunManager">
@@ -68,6 +123,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Node.js.server.js" />
         <item itemvalue="Node.js.server.js" />
       </list>
     </recent_temporary>
@@ -102,7 +158,7 @@
       <workItem from="1608881912829" duration="7455000" />
       <workItem from="1608905759064" duration="10310000" />
       <workItem from="1608949842290" duration="4873000" />
-      <workItem from="1608965487751" duration="1701000" />
+      <workItem from="1608965487751" duration="2251000" />
     </task>
     <servers />
   </component>
