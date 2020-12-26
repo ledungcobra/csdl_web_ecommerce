@@ -8,6 +8,7 @@ import TopProducts from "../components/HomeScreen/TopProducts";
 import NewLetter from "../components/HomeScreen/NewLetter";
 import {login} from "../actions/userActions";
 import axios from "axios";
+import {useSelector} from "react-redux";
 
 const HomeScreen = () => {
 
@@ -22,23 +23,32 @@ const HomeScreen = () => {
         }
         axios.post('/api/products', {
             page: 1,
-            limit:3
-        },config).then(r => setProductsHotOffers(r.data)).catch(e=> console.log(e));
+            limit: 10
+        }, config).then(r => setProductsHotOffers(r.data)).catch(e => console.log(e));
 
-    },[]);
+    }, []);
+    const {error} = useSelector(state => state.cart)
+    useEffect(() => {
+        if (error) {
+            window.alert(error);
+        }
+    }, [error])
+
     return (
         <div>
             <Row>
-                <Col md={12}>
+                <Col>
                     <div className="banner">
+
                         <LeftBanner/>
-                        <RightBanner/>
                         <div className="clearfix"/>
                     </div>
-                    <BottomBanner/>
-                    <HotOffers offers={productHotOffers}/>
-                    <TopProducts/>
-                    <NewLetter/>
+                </Col>
+                <Col>
+                    <div className="banner">
+                        <HotOffers offers={productHotOffers}/>
+                        <div className="clearfix"/>
+                    </div>
                 </Col>
             </Row>
         </div>

@@ -8,8 +8,8 @@ const productRoutes =require("./routes/productRoutes.js");
 const bodyParser = require('body-parser');
 const app = express();
 const userRoutes = require('./routes/userRoutes');
-
-
+const cartRouters=require('./routes/cartRouter');
+const typeRouters = require('./routes/typeRouters')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -17,8 +17,9 @@ const PORT = process.env.PORT || 5000;
 
 
 app.use('/api/products',productRoutes);
-app.use('/api/users/',userRoutes)
-
+app.use('/api/users/',userRoutes);
+app.use('/api/cart',cartRouters);
+app.use('/api/types', typeRouters);
 app.use(notFound)
 app.use(errorHandler);
 

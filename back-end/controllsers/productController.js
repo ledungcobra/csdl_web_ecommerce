@@ -16,7 +16,7 @@ module.exports.postGetProducts = asyncHandler(
     })
 ;
 module.exports.getProduct = asyncHandler(async(req,res)=>{
-
+    console.log(req.body);
     const result = await getProduct(req.body.id);
     res.json(result);
 })

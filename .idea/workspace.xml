@@ -20,23 +20,45 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c834f459-fd85-412a-9ce8-a6ad75437f51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/Commons/FormAddCart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/controllsers/cartControlller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/controllsers/typeController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/routes/cartRouter.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/routes/typeRouters.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/services/CartService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/back-end/services/typeService.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/RowInCart.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/Commons/TypeTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_11_15_AM__Default_Changelist_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_12_25_2020_11_15_AM__Default_Changelist_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/config/db.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/controllsers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/productController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/productRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/controllsers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/server.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/services/productsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/services/productsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/actions/cartActtions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/actions/cartActtions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/FormAddCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/FormAddCart.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/LeftBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/LeftBanner.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/constants/cartConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/constants/cartConstants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/store.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -67,11 +89,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Tai lieu\CSDLNC\csdl_web_eco" />
       <recent name="$PROJECT_DIR$/front-end/src/components/Commons" />
       <recent name="$PROJECT_DIR$/front-end/src/components/EventScreen" />
       <recent name="$PROJECT_DIR$/front-end/src/components/HomeScreen" />
       <recent name="$PROJECT_DIR$/front-end/public" />
-      <recent name="$PROJECT_DIR$/front-end/public/images" />
     </key>
   </component>
   <component name="RunManager">

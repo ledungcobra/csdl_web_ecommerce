@@ -1,29 +1,32 @@
-import React, {useState} from 'react'
-import SplitButton from "react-bootstrap/SplitButton";
-import {Button, Dropdown} from "react-bootstrap";
-import ButtonGroup from "react-bootstrap/ButtonGroup";
-import DropdownButton from "react-bootstrap/DropdownButton";
-import  './LeftBanner.css';
+import React, {useEffect, useState} from 'react'
+
+import './LeftBanner.css';
+import axios from "axios";
+import TypeTable from "./TypeTable";
+
 
 const LeftBanner = () => {
+    const [types, setTypes] = useState([]);
 
+    useEffect(() => {
+        const config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        axios.post('/api/types', {}, config).then(r => setTypes(r.data)).catch(e => console.log(e));
 
-
-    const [isHover,setIsHover] = useState(false);
+    }, []);
 
     return (
-
-        <div className="w3l_banner_nav_left">
-            <nav className="navbar nav_bottom">
-                <div style={{minWidth: "100%"}} >
-                    <Button
-                        className='btn-hover'
-                        style={{minWidth: "100%"}}
-                    >spanType</Button>
-                </div>
-            </nav>
+        <div className="mb-2">
+            {types.map((data, index) => {
+                return (
+                    <TypeTable
+                        key={index}
+                        data={data}/>)
+            })}
         </div>
-
     )
 }
 

@@ -4,7 +4,7 @@ import './ProductItem.css'
 import  FormAddCart from './FormAddCart'
 
 
-const ProductItem = ({productId = "1", productName = 'default name', currentPrice = 100, stockPrice = 200, imageUrl = ''} = {}) => {
+const ProductItem = ({product}) => {
 
     return (
         <div className="col-md-3 w3ls_w3l_banner_left product-item">
@@ -17,13 +17,17 @@ const ProductItem = ({productId = "1", productName = 'default name', currentPric
                         <figure>
                             <div className="snipcart-item block">
                                 <div className="snipcart-thumb">
-                                    <a href="single.html"><img src={imageUrl} alt=" "
+                                    <a href="single.html"><img src={product.imageUrl} alt=" "
                                                                className="img-responsive"/></a>
-                                    <p className='product-text'>{productName}</p>
-                                    <h4>{currentPrice}<span>{stockPrice}</span></h4>
+                                    <p className='product-text'>{product.productName}</p>
+                                    <h4>{product.currentPrice}<span>{product.stockPrice}</span></h4>
                                 </div>
                                 <div className="snipcart-details">
-                                    <FormAddCart productId={productId}/>
+
+                                    <FormAddCart
+                                        key={product.productId}
+                                        productId={product.productId}/>
+
                                 </div>
                             </div>
                         </figure>

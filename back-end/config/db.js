@@ -1,6 +1,7 @@
 const sql =  require('mssql');
 const result = {};
 const dotenv =require('dotenv');
+
 dotenv.config();
 
 const connectDB = async () => {

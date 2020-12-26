@@ -57,6 +57,7 @@ const getCustomerProfile = asyncHandler(async (req, res) => {
 
 });
 
+
 /**
  *
  * @type {*|express.RequestHandler}
