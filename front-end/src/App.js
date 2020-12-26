@@ -13,6 +13,7 @@ import ServicesScreen from "./screens/ServicesScreen";
 import CheckoutScreen from "./screens/CheckoutScreen";
 import PaymentScreen from "./screens/PaymentScreen";
 import SearchScreen from "./screens/SearchScreen";
+import SingleProductScreen from "./screens/SingleProductScreen";
 
 
 function App() {
@@ -32,6 +33,7 @@ function App() {
                 <Route path='/cart' component={CheckoutScreen}/>
                 <Route path='/payment' component={ PaymentScreen }/>
                 <Route path='/search' component={SearchScreen} />
+                <Route exact path='/product/:id' component={SingleProductScreen}/>
             </main>
             <Footer/>
         </Router>

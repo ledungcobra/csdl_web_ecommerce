@@ -20,187 +20,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c834f459-fd85-412a-9ce8-a6ad75437f51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/screens/SearchScreen.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/screens/SingleProductScreen.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/controllsers/productController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/productController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/controllsers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/userController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/back-end/routes/productRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/productRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/services/productsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/services/productsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/services/userService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/asset-manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/css/bootstrap.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/css/creditly.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/css/easy-responsive-tabs.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/css/flexslider.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/css/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/10.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/11.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/12.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/13.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/13.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/14.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/14.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/15.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/16.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/16.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/17.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/17.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/18.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/18.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/19.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/19.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/20.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/20.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/21.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/22.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/22.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/23.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/23.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/24.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/24.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/25.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/25.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/26.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/26.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/27.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/27.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/28.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/28.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/29.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/29.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/30.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/30.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/31.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/31.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/32.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/32.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/33.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/33.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/34.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/34.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/35.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/35.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/36.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/37.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/38.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/39.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/4.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/40.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/41.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/42.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/44.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/45.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/46.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/47.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/48.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/49.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/50.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/51.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/52.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/53.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/54.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/55.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/56.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/57.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/58.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/59.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/6.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/60.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/61.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/62.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/63.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/64.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/65.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/66.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/67.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/68.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/69.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/7.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/70.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/71.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/72.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/73.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/74.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/75.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/76.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/airpods.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/alexa.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/arrow.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/camera.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/card.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/cart.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/close_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/img-sp.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/mouse.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/offer.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/paypal.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/phone.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/playstation.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/star.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/star1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/images/tag.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/bootstrap.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/counterup.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/creditly.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/easing.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/easyResponsiveTabs.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/jquery-1.11.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/jquery.flexslider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/jquery.wmuSlider.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/minicart.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/move-top.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/okzoom.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/js/waypoints.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/css/main.094c910a.chunk.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/css/main.094c910a.chunk.css.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/js/2.30f43fb5.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/js/2.30f43fb5.chunk.js.LICENSE.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/js/2.30f43fb5.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/js/3.18d163d5.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/js/3.18d163d5.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/js/main.02d847c0.chunk.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/js/main.02d847c0.chunk.js.map" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/js/runtime-main.48cc78a0.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/build/static/js/runtime-main.48cc78a0.js.map" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/public/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/actions/productActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/actions/productActions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/Message.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/Message.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/NavBar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductRow.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/ProductRow.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/constants/productConstants.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/constants/productConstants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/reducers/productReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/reducers/productReducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/front-end/src/screens/SearchScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/SearchScreen.jsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -274,7 +100,8 @@
       <workItem from="1608830158582" duration="13871000" />
       <workItem from="1608881912829" duration="7455000" />
       <workItem from="1608905759064" duration="10310000" />
-      <workItem from="1608949842290" duration="1601000" />
+      <workItem from="1608949842290" duration="4873000" />
+      <workItem from="1608965487751" duration="1265000" />
     </task>
     <servers />
   </component>

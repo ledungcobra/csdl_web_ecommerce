@@ -1,14 +1,11 @@
 import React, {useEffect, useState} from 'react';
 import BreadCrumb from "../components/Commons/BreadCrumb";
-import LeftBanner from "../components/Commons/LeftBanner";
 import {useDispatch, useSelector} from "react-redux";
 import {searchProducts} from "../actions/productActions";
-import {load} from "dotenv";
 import {Col, Pagination, Row, Spinner} from "react-bootstrap";
 import Message from "../components/Commons/Message";
 import ProductRow from "../components/ProductsScreen/ProductRow";
 import {useHistory} from 'react-router-dom';
-import RightBanner from "../components/HomeScreen/RightBanner";
 
 const SearchScreen = () => {
 

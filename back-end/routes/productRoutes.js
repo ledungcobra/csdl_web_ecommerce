@@ -12,5 +12,6 @@ const router = new express.Router();
 router.post('/', postGetProducts);
 router.get('/search',getProducts);
 
+router.get('/:id',getProduct);
 
 module.exports = router;
