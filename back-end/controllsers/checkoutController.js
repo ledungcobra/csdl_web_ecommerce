@@ -31,6 +31,10 @@ module.exports.postAddAddress = asyncHandler(async(req,res)=>{
     const result =  checkoutService.postAddressService(req.body.shippingData,req.body.userid);
     res.json(result);
 });
+module.exports.getUserAddress = asyncHandler(async(req,res)=>{
+    const result =  await checkoutService.getUserAddressService(req.params.userID);
+    res.json(result);
+});
 
 
 

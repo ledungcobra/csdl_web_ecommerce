@@ -58,7 +58,22 @@ module.exports.postAddressService = (addressData,userid)=>{
             DI_Province_Id,DI_District_Id,DI_Ward_Id,DI_Address) values (${userid},N'${addressData.name}',
             '${addressData.phoneNumber}',${addressData.provinceOrCity},${ addressData.district},${addressData.ward},N'${addressData.address}')`
         console.log(QUERY_STRING)
-        db.sql.query(QUERY_STRING).then(res()).catch(e => rej(e));
+        db.sql.query(QUERY_STRING).then(()=>res()).catch(e => rej(e));
     })
 }
 
+
+module.exports.getUserAddressService = (userid) =>{
+    return new Promise((res, rej)=> {
+
+        let QUERY_STRING = `select di_address+', '+ di_ward_name+','+di_district_name+','+di_province_name address, di_ward_name ward,di_district_name district,di_province_name province, 
+                           DI_PhoneNumber phonenumber,id_di id from DeliveryInformation where id_customer = ${userid}`
+        db.sql.query(QUERY_STRING).then(({recordsets})=>{
+            if(recordsets[0].length>0){
+                res(recordsets[0])
+            }else{
+                rej('Not found');
+            }
+        }).catch(e => rej(e));
+    })
+}

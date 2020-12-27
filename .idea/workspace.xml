@@ -23,32 +23,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c834f459-fd85-412a-9ce8-a6ad75437f51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/back-end/controllsers/checkoutController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end/routes/checkoutRouter.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/back-end/services/checkoutService.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/Commons/Stepper.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/screens/CartScreen.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/controllsers/cartControlller.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/cartControlller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/controllsers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/userController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/routes/cartRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/cartRouter.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/services/CartService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/services/CartService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/controllsers/checkoutController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/checkoutController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/routes/checkoutRouter.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/checkoutRouter.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/services/checkoutService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/services/checkoutService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/RowInCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/RowInCart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.css" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/ProductItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/HomeScreen/HotOffer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Login/LoginRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Login/LoginRightBanner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/SingleProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/SingleProductItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/CartScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/CheckoutScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/CheckoutScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/screens/HomeScreen.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

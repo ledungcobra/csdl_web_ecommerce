@@ -1,4 +1,5 @@
 const express = require('express');
+const {getUserAddress} = require("../controllsers/checkoutController");
 const {postAddAddress} = require("../controllsers/checkoutController");
 const {postCartCheckout} = require("../controllsers/checkoutController");
 const {postCart} = require("../controllsers/cartControlller");
@@ -18,6 +19,7 @@ const router = new express.Router();
 router.get('/province',getProvince );
 router.get('/district/:id',getDistrict);
 router.get('/ward/:id',getWard);
+router.get('/address/:userID',getUserAddress);
 router.post('/addAddress', postAddAddress);
 
 
