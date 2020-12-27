@@ -3,9 +3,11 @@ import React, {useEffect} from 'react';
 import '../Commons/ProductItem.css'
 import {useHistory} from 'react-router-dom';
 import FormAddCart from "../Commons/FormAddCart";
-import {ListGroup} from "react-bootstrap";
+import {Card, ListGroup} from "react-bootstrap";
 import SimpleRating from "../Commons/Rating";
 import HalfRating from "../Commons/Rating";
+import Button from "@material-ui/core/Button";
+import VoteRating from "../Commons/VoteRating";
 
 
 
@@ -41,11 +43,25 @@ const SingleProductItem = ({product}) => {
                                         key={product.Id_GD}
                                         productId={product.Id_GD}/>
                                 </div>
+                                <div>
+
+                                    <Card>
+
+                                        <div>
+                                            <VoteRating
+                                                Good={product.Id_GD}
+                                                valueRate = {product.GD_Rating_AVG}
+                                            />
+                                        </div>
+                                    </Card>
+                                </div>
+
                             </div>
                         </figure>
                     </div>
                 </div>
             </div>
+
             <div className="detail-content">
                 <ListGroup variant='flush'>
                     <ListGroup.Item><div className="title-more"><p>Tên: {product.GD_Name}</p></div></ListGroup.Item>

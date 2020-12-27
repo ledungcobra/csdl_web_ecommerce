@@ -23,24 +23,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c834f459-fd85-412a-9ce8-a6ad75437f51" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/Commons/Rating.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/TypeProduct.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/front-end/src/screens/TypeScreen.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/front-end/src/components/Commons/VoteRating.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/controllsers/typeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/typeController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/routes/typeRouters.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/typeRouters.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/back-end/services/typeService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/services/typeService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/controllsers/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/controllsers/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/routes/userRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/routes/userRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/back-end/services/userService.js" beforeDir="false" afterPath="$PROJECT_DIR$/back-end/services/userService.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/.eslintcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/actions/cartActtions.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/actions/cartActtions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/CheckoutScreen/CheckoutRightBanner.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/FormAddCart.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/FormAddCart.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/components/Commons/TypeTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/Commons/TypeTable.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/SingleProductItem.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/components/ProductsScreen/SingleProductItem.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" beforeDir="false" afterPath="$PROJECT_DIR$/front-end/src/reducers/cartReducers.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +128,7 @@
       <workItem from="1608905759064" duration="10310000" />
       <workItem from="1608949842290" duration="4873000" />
       <workItem from="1608965487751" duration="2251000" />
-      <workItem from="1609056892683" duration="17105000" />
+      <workItem from="1609056892683" duration="24923000" />
     </task>
     <servers />
   </component>
@@ -173,7 +162,7 @@
         </line-breakpoint>
         <line-breakpoint type="javascript">
           <url>file://$PROJECT_DIR$/front-end/src/components/ProductsScreen/SingleProductItem.jsx</url>
-          <line>21</line>
+          <line>23</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
