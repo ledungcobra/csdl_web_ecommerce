@@ -61,6 +61,7 @@ export const userRegister = (username, email, password, birthday, gender, phoneN
         }
 
         const {data} = await axios.post('/api/users/register', {
+                name: username,
                 email,
                 password,
                 phoneNumber,
