@@ -9,6 +9,7 @@ import NewLetter from "../components/HomeScreen/NewLetter";
 import {login} from "../actions/userActions";
 import axios from "axios";
 import {useSelector} from "react-redux";
+import BreadCrumb from "../components/Commons/BreadCrumb";
 
 const HomeScreen = () => {
 
@@ -50,6 +51,7 @@ const HomeScreen = () => {
     return (
 
         <div>
+                <BreadCrumb title={'Home'} />
             <Row>
                 <Col md={3}>
                     <div className="banner">

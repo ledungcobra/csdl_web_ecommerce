@@ -16,9 +16,10 @@ const HotOffers = ({offers}) => {
                             const product = {
                                 productId: prod.Id_Good,
                                 imageUrl: prod.Thumbnail_URL,
-                                currentPrice: prod.GD_Price,
+                                currentPrice: parseInt(prod.GD_Price*(100-prod.GD_Discount_Rate)/100000)*1000,
                                 productName: prod.GD_Name,
-                                stockPrice: prod.GD_Price * parseFloat(prod.GD_Discount_Rate) / 100
+                                stockPrice: prod.GD_Price,
+                                discount: prod.GD_Discount_Rate
                             };
 
                             return(

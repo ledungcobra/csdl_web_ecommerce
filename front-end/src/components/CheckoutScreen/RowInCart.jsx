@@ -48,7 +48,7 @@ const RowInCart = ({data, index}) => {
                 </div>
             </td>
             <td className="invert" style={{"width": "600px"}}>{dataState.name}</td>
-            <td className="invert">{parseInt(dataState.price * dataState.qty*(100-dataState.discount)/100000)*1000}</td>
+            <td className="invert">{Math.floor(dataState.price * dataState.qty*(100-dataState.discount)/100000)*1000}</td>
             <td className="invert" onClick={RemoveItemCartHandler}>
                 <div className="rem">
                     <div className="close1"/>

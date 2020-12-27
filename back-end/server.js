@@ -10,6 +10,7 @@ const app = express();
 const userRoutes = require('./routes/userRoutes');
 const cartRouters=require('./routes/cartRouter');
 const typeRouters = require('./routes/typeRouters')
+const checkoutRouters = require('./routes/checkoutRouter')
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
@@ -20,6 +21,7 @@ app.use('/api/products',productRoutes);
 app.use('/api/users/',userRoutes);
 app.use('/api/cart',cartRouters);
 app.use('/api/types', typeRouters);
+app.use('/api/checkout',checkoutRouters);
 app.use(notFound)
 app.use(errorHandler);
 
