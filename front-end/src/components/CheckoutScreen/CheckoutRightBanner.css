@@ -1,0 +1,20 @@
+.direction-button:hover{
+    background-color: #407004 !important;
+    color: white;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+.direction-button{
+    background-color: #143a58 !important;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+
+.direction-button-back:hover{
+    background-color: #407004 !important;
+    color: white;
+    clip-path: polygon(0% 50%, 25% 0%, 100% 0%, 100% 100%, 25% 100%);
+}
+.direction-button-back{
+    background-color: #143a58 !important;
+    padding-left: 30px !important;
+    clip-path: polygon(0% 50%, 25% 0%, 100% 0%, 100% 100%, 25% 100%);
+}

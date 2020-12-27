@@ -48,11 +48,6 @@ module.exports.getWard = (id)=>{
 module.exports.postAddressService = (addressData,userid)=>{
 
     return new Promise((res, rej)=> {
-        console.log("postAddressService")
-
-        console.log(userid)
-
-
 
         let QUERY_STRING = `Insert into DeliveryInformation(Id_Customer,DI_Name,DI_PhoneNumber,
             DI_Province_Id,DI_District_Id,DI_Ward_Id,DI_Address) values (${userid},N'${addressData.name}',
@@ -67,7 +62,41 @@ module.exports.getUserAddressService = (userid) =>{
     return new Promise((res, rej)=> {
 
         let QUERY_STRING = `select di_address+', '+ di_ward_name+','+di_district_name+','+di_province_name address, di_ward_name ward,di_district_name district,di_province_name province, 
-                           DI_PhoneNumber phonenumber,id_di id from DeliveryInformation where id_customer = ${userid}`
+                           DI_PhoneNumber phonenumber,id_di id,di_name name 
+                           from DeliveryInformation where id_customer = ${userid}`
+        db.sql.query(QUERY_STRING).then(({recordsets})=>{
+            if(recordsets[0].length>0){
+                res(recordsets[0])
+            }else{
+                rej('Not found');
+            }
+        }).catch(e => rej(e));
+    })
+}
+
+module.exports.getTypePay = ()=>{
+    return new Promise((res, rej)=> {
+
+        let QUERY_STRING = `select tp_name name, id_tp id from typepay`
+        db.sql.query(QUERY_STRING).then(({recordsets})=>{
+            if(recordsets[0].length>0){
+                res(recordsets[0])
+            }else{
+                rej('Not found');
+            }
+        }).catch(e => rej(e));
+    })
+}
+
+module.exports.getVoucher = (type,cus_id)=>{
+    return new Promise((res, rej)=> {
+
+        let QUERY_STRING = `select id_voucher id,voucher_name name,
+                voucher_startdate start_date, voucher_enddate end_date,
+                 voucher_value value
+                    from getVoucherByType(${type},${cus_id})
+
+                `
         db.sql.query(QUERY_STRING).then(({recordsets})=>{
             if(recordsets[0].length>0){
                 res(recordsets[0])

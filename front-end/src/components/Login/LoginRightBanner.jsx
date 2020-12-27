@@ -13,6 +13,7 @@ const LoginRightBanner = ({isLogin, location}) => {
     const history = useHistory()
     const {loading, userInfo} = useSelector(state => state.user);
 
+
     if (userInfo && Object.keys(userInfo).length > 0) {
         if (location) {
             console.log(location);
@@ -21,6 +22,8 @@ const LoginRightBanner = ({isLogin, location}) => {
         }
     }
 
+    console.log(location);
+    
 
     const changeLayoutHandler = (e) => {
         setIsLogin((prev) => !prev);

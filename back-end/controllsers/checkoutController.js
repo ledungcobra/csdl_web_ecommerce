@@ -36,6 +36,18 @@ module.exports.getUserAddress = asyncHandler(async(req,res)=>{
     res.json(result);
 });
 
+module.exports.getTypePay = asyncHandler(async(req,res)=>{
+   const result = await checkoutService.getTypePay();
+   res.json(result);
+});
 
+module.exports.getVoucher = asyncHandler(async (req,res)=>{
+    const {type} = req.query;
+    const {id} = req.query ;
+
+    const result = await checkoutService.getVoucher(type,id);
+    res.json(result);
+
+});
 
 
