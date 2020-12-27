@@ -15,6 +15,7 @@ import PaymentScreen from "./screens/PaymentScreen";
 import SearchScreen from "./screens/SearchScreen";
 import SingleProductScreen from "./screens/SingleProductScreen";
 import CartScreen from "./screens/CartScreen";
+import TypeScreen from "./screens/TypeScreen";
 
 
 function App() {
@@ -38,6 +39,7 @@ function App() {
                 <Route path='/search' component={SearchScreen} />
                 <Route exact path='/product/:id' component={SingleProductScreen}/>
                 <Route path='/cart' component={ CartScreen}/>
+                <Route path='/types/:type' component={TypeScreen}/>
             </main>
             <Footer/>
         </Router>

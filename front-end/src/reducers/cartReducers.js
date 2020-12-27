@@ -21,9 +21,14 @@ export const cartReducer = (state = {cartItems: [],totalPrice: 0}, action) => {
 
             if (existItem) {
                 const cartItems = state.cartItems.map(x => {
-                    if(x.product === existItem.product){
+                    if(x.product === existItem.product && x.qty<existItem.remain){
+                        console.log(x.qty)
+                        console.log(x.remain)
+                        console.log(existItem.qty);
+                        console.log(existItem.remain);
                         x.qty ++;
                         return x;
+
                     }
                     return x;
                 });

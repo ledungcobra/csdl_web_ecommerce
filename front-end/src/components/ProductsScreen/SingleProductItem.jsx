@@ -4,12 +4,13 @@ import '../Commons/ProductItem.css'
 import {useHistory} from 'react-router-dom';
 import FormAddCart from "../Commons/FormAddCart";
 import {ListGroup} from "react-bootstrap";
+import SimpleRating from "../Commons/Rating";
+import HalfRating from "../Commons/Rating";
 
 
 
 
 const SingleProductItem = ({product}) => {
-    console.log(product);
     const history = useHistory();
 
     const onClickProductHandler = (e) => {
@@ -22,6 +23,11 @@ const SingleProductItem = ({product}) => {
                 <div className="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div className="agile_top_brand_left_grid1">
                         <figure>
+                            <HalfRating
+                                key={product.Id_GD}
+                                valueRate = {product.GD_Rating_AVG}
+
+                            />
                             <div className="snipcart-item block" >
                                 <div className="snipcart-thumb">
                                     <img src={product.Thumbnail_URL} alt=" "
@@ -47,7 +53,7 @@ const SingleProductItem = ({product}) => {
                 <ListGroup.Item>  <p className="info">Số lượng đã bán:{product.GD_Sold}</p></ListGroup.Item>
                 <ListGroup.Item> <p className="info">Size: {product.GD_Size}</p></ListGroup.Item>
                 <ListGroup.Item><p className="info">Màu sắc:{product.GD_Color}</p></ListGroup.Item>
-                <ListGroup.Item><p className="info">Màu sắc:{product.GD_Color}</p></ListGroup.Item>
+                <ListGroup.Item><p className="info">Rating:{product.GD_Rating_AVG}</p></ListGroup.Item>
                 </ListGroup>
 
 

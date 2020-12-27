@@ -21,6 +21,7 @@ app.use('/api/products',productRoutes);
 app.use('/api/users/',userRoutes);
 app.use('/api/cart',cartRouters);
 app.use('/api/types', typeRouters);
+app.use('/types', typeRouters);
 app.use('/api/checkout',checkoutRouters);
 app.use(notFound)
 app.use(errorHandler);

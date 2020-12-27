@@ -76,7 +76,7 @@ const CheckoutRightBanner = () => {
             }).catch(e => console.log(e));
         } else {
             console.log("fail")
-            history.push(`/login`);
+            history.push(`/login?login`);
         }
 
 
@@ -98,7 +98,7 @@ const CheckoutRightBanner = () => {
             }).catch(e => console.log(e));
         } else {
             console.log("fail")
-            history.push(`/login`);
+            history.push(`/login?login`);
         }
     }
 
