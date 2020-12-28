@@ -44,7 +44,7 @@ const CartScreen = () => {
     return (
         <div className='d-flex flex-column'>
             <BreadCrumb title={'Cart'}/>
-            <Card className='mx-4 my-4 p-3'>
+            <Card className='mx-4 my-4 p-1'>
                 <div className = 'd-flex flex-column'>
                     <table className="timetable_sub">
                         <thead>

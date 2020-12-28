@@ -163,16 +163,19 @@ const StepChoseTypePage = props => {
                                 <Col className='d-flex justify-content-center align-items-center'>
                                     <ul onChange={onFormChange}>
                                         {
-                                            [{id: -100, name: 'Select type to pay'}, ...typePays].map((type, index) => (
-                                                <div key={type.name} className='d-flex'
+                                            [{id: -100, name: 'Select type to pay' ,value: null}, ...typePays].map((type, index) => (
+                                                type.id>0?
+                                                <div key={type.name} className='d-flex'                                                >
 
-                                                >
                                                     <input type='radio' name='typePay'
                                                            id={type.id}
                                                            value={type.name}/>
                                                     <div className='mr-3'/>
                                                     <label>{type.name}</label>
-                                                </div>
+                                                </div>:
+                                                    <div key={type.name} className='d-flex'                                                >
+                                                        <label>{type.name}</label>
+                                                    </div>
                                             ))
                                         }
                                     </ul>
@@ -238,11 +241,12 @@ const StepChoseTypePage = props => {
                             }}>Back Step<span
                         aria-hidden="true"/></button>
                 </div>
-                <span ref={messageRef}/>
-                <button className="checkout-right-basket align-self-start" style={{border: "none"}}>
+                <div ref={messageRef}/>
+                <div className="checkout-right-basket align-self-start Background-color transparent" style={{backgroundColor: "transparent!important"}}
+                >
                     <Link class='direction-button' onClick={handleNextButton} to="/">Make a Payment <span
                         aria-hidden="true"/></Link>
-                </button>
+                </div>
             </Row>
         </div>
     )

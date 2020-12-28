@@ -12,6 +12,7 @@ const FormAddCart = ({productId}) => {
     const addToCartHandler = (e) => {
         e.preventDefault();
         dispatch(addToCart(productId));
+        window.alert("Add Successfully");
 
     }
     return (
