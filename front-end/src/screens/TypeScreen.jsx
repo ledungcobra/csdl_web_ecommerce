@@ -6,9 +6,10 @@ import axios from 'axios';
 import SingleProductItem from "../components/ProductsScreen/SingleProductItem";
 import TypeProduct from "../components/ProductsScreen/TypeProduct";
 import {useHistory} from 'react-router-dom';
+import {Pagination} from "@material-ui/lab";
+import PaginationControlled from "../components/Commons/Paging";
 
-const TypeScreen = ({match}) => {
-
+const TypeScreen = () => {
 
     return (
         <div>
@@ -23,9 +24,22 @@ const TypeScreen = ({match}) => {
                         </div>
                     </Col>
                     <Col md={9}>
-                    <TypeProduct url={match.url}/>
+                    <TypeProduct
+                        url={window.location.pathname}
+                        page = {window.location.search}
+                    />
+                    </Col>
+
+                </Row>
+                <Row >
+                    <Col className='d-flex justify-content-center'>
+                        <PaginationControlled
+                            url ={window.location.pathname}
+                            pageParam={window.location.search}
+                        />
                     </Col>
                 </Row>
+
             </div>
         </div>
     );

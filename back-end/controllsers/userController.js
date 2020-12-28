@@ -132,13 +132,10 @@ const rateGoodController = asyncHandler(async (req, res) => {
 
     if (result) {
         res.status(201).json({
-            token: generateToken(email),
-            email,
-            name
         })
     } else {
         res.status(400)
-        throw new Error('Cannot register new account');
+        throw new Error('Cannot rate this product');
     }
 
 });

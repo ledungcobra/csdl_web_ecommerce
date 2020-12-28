@@ -1,5 +1,5 @@
 const db = require('../config/db');
-
+const mssql = require('mssql')
 module.exports.getCustomerAuth = (email) => {
     return new Promise((res, rej) => {
         db.sql.query(
@@ -96,24 +96,16 @@ module.exports.addNewCustomer = (name, email, gender, password, phoneNumber, bir
 
 module.exports.rateGoodService= (userid, goodid, rate) => {
     return new Promise((res,rej)=>{
-
-        const query = `
-                    insert into 
-                    Customer_Rate_Good(Id_Customer,Id_GD,rate) 
-                    values(${userid}, ${goodid}, ${rate})`
-
-        console.log(query);
-
-        db.sql.query(query)
-            .then(({recordsets})=>{
-                if(recordsets[0].length>0){
-                    res(true)
-                }
-            })
-
-            .catch(e=>rej(e));
-
-    })
+        var request = db.sql.request();
+        request.input('id_customer',mssql.INT,userid)
+        request.input('id_GD', mssql.INT,goodid)
+        request.input('rate', mssql.INT,rate)
+        request.execute('RatingGood',(err, result) =>{
+            console.dir(err);
+            res(result.returnValue)
+            rej(err)
+        })
+    });
 }
 
 module.exports.updateCustomer = (name, email, gender, birthday, phoneNumber, password)=>{
