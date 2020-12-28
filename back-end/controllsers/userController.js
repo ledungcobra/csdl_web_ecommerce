@@ -1,5 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const generateToken = require("../utils/generateToken.js");
+const {rateGoodService} = require("../services/userService");
 const {addNewCustomer} = require("../services/userService");
 const {checkIfExistCustomer} = require("../services/userService");
 const {getCustomerInfoDetail} = require("../services/userService");
@@ -121,9 +122,32 @@ const putChangeCustomerProfile = asyncHandler(async (req, res) => {
 });
 
 
+const rateGoodController = asyncHandler(async (req, res) => {
+
+    const {userid, goodid, rate} = req.body;
+    console.log(req.body)
+
+
+    const result = await rateGoodService(userid, goodid, rate);
+
+    if (result) {
+        res.status(201).json({
+            token: generateToken(email),
+            email,
+            name
+        })
+    } else {
+        res.status(400)
+        throw new Error('Cannot register new account');
+    }
+
+});
+
+
 module.exports = {
     authCustomer,
     getCustomerProfile,
     registerCustomer,
-    putChangeCustomerProfile
+    putChangeCustomerProfile,
+    rateGoodController
 }

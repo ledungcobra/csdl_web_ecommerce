@@ -34,6 +34,7 @@ export const addToCart = (id) => async (dispatch, getState) => {
                 image: data[0].Thumbnail_URL,
                 price: data[0].GD_Price,
                 discount: data[0].GD_Discount_Rate,
+                remain: data[0].GD_Remain,
                 qty:1
             }
         });
@@ -76,6 +77,7 @@ export const reduceToCart = (id) => async (dispatch, getState) => {
                 image: data[0].Thumbnail_URL,
                 price: data[0].GD_Price,
                 discount: data[0].GD_Discount_Rate,
+                remain: data[0].GD_Remain,
                 qty:1
             }
         });

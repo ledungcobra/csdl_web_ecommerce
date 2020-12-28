@@ -94,6 +94,28 @@ module.exports.addNewCustomer = (name, email, gender, password, phoneNumber, bir
     })
 }
 
+module.exports.rateGoodService= (userid, goodid, rate) => {
+    return new Promise((res,rej)=>{
+
+        const query = `
+                    insert into 
+                    Customer_Rate_Good(Id_Customer,Id_GD,rate) 
+                    values(${userid}, ${goodid}, ${rate})`
+
+        console.log(query);
+
+        db.sql.query(query)
+            .then(({recordsets})=>{
+                if(recordsets[0].length>0){
+                    res(true)
+                }
+            })
+
+            .catch(e=>rej(e));
+
+    })
+}
+
 module.exports.updateCustomer = (name, email, gender, birthday, phoneNumber, password)=>{
     return new Promise((res,rej)=>{
         const query = `update customer 

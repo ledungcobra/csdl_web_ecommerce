@@ -3,13 +3,16 @@ import React, {useEffect} from 'react';
 import '../Commons/ProductItem.css'
 import {useHistory} from 'react-router-dom';
 import FormAddCart from "../Commons/FormAddCart";
-import {ListGroup} from "react-bootstrap";
+import {Card, ListGroup} from "react-bootstrap";
+import SimpleRating from "../Commons/Rating";
+import HalfRating from "../Commons/Rating";
+import Button from "@material-ui/core/Button";
+import VoteRating from "../Commons/VoteRating";
 
 
 
 
 const SingleProductItem = ({product}) => {
-    console.log(product);
     const history = useHistory();
 
     const onClickProductHandler = (e) => {
@@ -22,6 +25,11 @@ const SingleProductItem = ({product}) => {
                 <div className="agile_top_brand_left_grid w3l_agile_top_brand_left_grid">
                     <div className="agile_top_brand_left_grid1">
                         <figure>
+                            <HalfRating
+                                key={product.Id_GD}
+                                valueRate = {product.GD_Rating_AVG}
+
+                            />
                             <div className="snipcart-item block" >
                                 <div className="snipcart-thumb">
                                     <img src={product.Thumbnail_URL} alt=" "
@@ -35,11 +43,25 @@ const SingleProductItem = ({product}) => {
                                         key={product.Id_GD}
                                         productId={product.Id_GD}/>
                                 </div>
+                                <div>
+
+                                    <Card>
+
+                                        <div>
+                                            <VoteRating
+                                                Good={product.Id_GD}
+                                                valueRate = {product.GD_Rating_AVG}
+                                            />
+                                        </div>
+                                    </Card>
+                                </div>
+
                             </div>
                         </figure>
                     </div>
                 </div>
             </div>
+
             <div className="detail-content">
                 <ListGroup variant='flush'>
                     <ListGroup.Item><div className="title-more"><p>Tên: {product.GD_Name}</p></div></ListGroup.Item>
@@ -47,7 +69,7 @@ const SingleProductItem = ({product}) => {
                 <ListGroup.Item>  <p className="info">Số lượng đã bán:{product.GD_Sold}</p></ListGroup.Item>
                 <ListGroup.Item> <p className="info">Size: {product.GD_Size}</p></ListGroup.Item>
                 <ListGroup.Item><p className="info">Màu sắc:{product.GD_Color}</p></ListGroup.Item>
-                <ListGroup.Item><p className="info">Màu sắc:{product.GD_Color}</p></ListGroup.Item>
+                <ListGroup.Item><p className="info">Rating:{product.GD_Rating_AVG}</p></ListGroup.Item>
                 </ListGroup>
 
 

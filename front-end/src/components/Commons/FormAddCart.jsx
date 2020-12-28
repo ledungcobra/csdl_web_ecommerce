@@ -14,7 +14,6 @@ const FormAddCart = ({productId}) => {
         dispatch(addToCart(productId));
 
     }
-    console.log(productId);
     return (
         <form action="#" method="post" onSubmit={(e)=>{e.preventDefault();}}>
             <fieldset>

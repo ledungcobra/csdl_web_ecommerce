@@ -1,4 +1,5 @@
 const express = require('express');
+const {getProductByType} = require("../controllsers/typeController");
 
 const {getType} = require("../controllsers/typeController");
 
@@ -11,6 +12,6 @@ const router = new express.Router();
  */
 
 router.post('/', getType);
-
+router.get('/:type', getProductByType);
 
 module.exports = router;
