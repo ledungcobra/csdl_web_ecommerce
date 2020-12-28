@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import store from "../store";
 import RowInCart from "../components/CheckoutScreen/RowInCart";
 import {useSelector} from "react-redux";
@@ -21,10 +21,8 @@ const CartScreen = () => {
     const {cartItems, totalPrice} = useSelector(state => state.cart);
     const {userInfo} = useSelector(state => state.user);
     const {id} = userInfo;
-
+    const messageRef = useRef();
     const history = useHistory();
-
-    console.log("Hello " + id)
 
     const decreaseItem = (id) => {
         console.log('Debugger helloworld')
@@ -35,7 +33,11 @@ const CartScreen = () => {
         if(!id){
             history.push('/login?login');
         }else{
-            history.push('/checkout');
+            if(cartItems.length === 0){
+                messageRef.current.innerHTML = 'Your cart is empty';
+            }else{
+                history.push('/checkout');
+            }
         }
 
     }
@@ -86,6 +88,8 @@ const CartScreen = () => {
                   onClick={handleCheckOut}
                   className='btn-primary  my-3 mr-5 py-2 px-2 align-content-end align-self-end'
                   style={{width: "100px" , color: 'white !important'}}> Check Out</Link>
+
+            <span className='align-self-end p-5 text-danger' ref={messageRef}/>
         </div>
     );
 };

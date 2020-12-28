@@ -66,30 +66,6 @@ const CheckoutRightBanner = () => {
         setCurrentDeliveryInfo(found);
     }
 
-    //push cart to sql
-    const onFormSubmit = (e) => {
-
-        if (userInfo.id) {
-            console.log(userInfo.id)
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json'
-
-                }
-            }
-            axios.post('/api/cart/', {
-                cart: cartItems,
-                user: userInfo.id
-            }, config).then(() => {
-            }).catch(e => console.log(e));
-        } else {
-            console.log("fail")
-            history.push(`/login?login`);
-        }
-
-
-    }
-
     const onAddAddress = (e) => {
         e.preventDefault();
 

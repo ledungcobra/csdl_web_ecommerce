@@ -7,10 +7,13 @@ import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 
 import './NavBar.css'
+import axios from "axios";
 const NavBar = () => {
 
     const dispatch = useDispatch();
     const { userInfo } = useSelector(state => state.user);
+    const { cartItems } = useSelector(state => state.cart);
+
     const [keyword, setKeyword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
 
@@ -23,8 +26,12 @@ const NavBar = () => {
     }, [userInfo])
 
     const logoutHandler = () => {
+        //Put cart into server when user logout
+
         dispatch(logout());
-        window.location.reload();
+
+
+
     }
     return (
         <div className="agileits_header">

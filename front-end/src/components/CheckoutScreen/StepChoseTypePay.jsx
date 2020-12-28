@@ -26,8 +26,11 @@ const StepChoseTypePage = props => {
 
     const scrollRef = createRef();
     const dispatch = useDispatch();
+    const messageRef = useRef();
+
 
     const price = useSelector(state => state.shipping).userInfo.price;
+
 
     useEffect(() => {
 
@@ -64,7 +67,6 @@ const StepChoseTypePage = props => {
             }).catch(e => console.log(e));
 
     }, [])
-
 
     const onFormChange = (e) => {
         let {value, name, id} = e.target;
@@ -127,8 +129,18 @@ const StepChoseTypePage = props => {
 
         if (pageObj.typePay) {
             dispatch(setUserTypePay(pageObj.typePay));
+            handleNext();
+        }else{
+            messageRef.current.innerHTML = 'You must choose payment method before going next'
+            messageRef.current.className = 'text-danger';
+            setTimeout(()=>{
+                if(messageRef.current){
+                    messageRef.current.innerHTML = ''
+                }
+            },1000);
         }
-        handleNext();
+
+
 
     }
 
@@ -226,6 +238,7 @@ const StepChoseTypePage = props => {
                             }}>Back Step<span
                         aria-hidden="true"/></button>
                 </div>
+                <span ref={messageRef}/>
                 <button className="checkout-right-basket align-self-start" style={{border: "none"}}>
                     <Link class='direction-button' onClick={handleNextButton} to="/">Make a Payment <span
                         aria-hidden="true"/></Link>

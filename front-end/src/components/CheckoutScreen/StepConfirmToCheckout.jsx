@@ -1,16 +1,16 @@
-import React from 'react';
+import React, {useRef} from 'react';
 import {Card, Col, Row} from "react-bootstrap";
 import RowInCart from "./RowInCart";
 import {useDispatch, useSelector} from "react-redux";
 import Button from "react-bootstrap/Button";
 import {proceedCheckout} from "../../actions/checkoutActions";
+import { useHistory } from 'react-router-dom';
 
 
 const StepConfirmToCheckout = props => {
-
     const {cartItems} = useSelector(state => state.cart);
     const {userInfo, shippingVoucher, invoiceVoucher, totalPrice, loading, error} = useSelector(state => state.shipping);
-
+    const messageRef = useRef();
     const calcActualPrice = (totalPrice, shippingVoucher, invoiceVoucher) => {
 
         if (!totalPrice) return 0;
@@ -26,6 +26,7 @@ const StepConfirmToCheckout = props => {
 
         return discountedPrice - shippingPrice;
     }
+    const history = useHistory();
 
     const dispatch = useDispatch();
 
@@ -34,8 +35,23 @@ const StepConfirmToCheckout = props => {
 
     const handlerProceedCheckout = (e) => {
         e.preventDefault();
-
         dispatch(proceedCheckout(actualPrice));
+
+        if (error) {
+            messageRef.current.innerHTML = 'Can not checkout';
+            messageRef.current.className = 'text-danger';
+
+            setTimeout(() => {
+                messageRef.current.innerHTML = '';
+            }, 700);
+
+        } else {
+            if (!loading) {
+                setTimeout(() => {
+                    history.push('/')
+                }, 1300);
+            }
+        }
     }
 
     return (
@@ -107,16 +123,13 @@ const StepConfirmToCheckout = props => {
                     <span className={error ? 'text-danger' : 'text-success'}>{
                         error ? error : !loading === false && 'Proceed checkout successfully'
                     }</span>
-
+                    <span ref={messageRef}/>
                     <Button className='py-2 w-100' variant="primary"
                             onClick={handlerProceedCheckout}
                     >Proceed Checkout</Button>{' '}
                 </Col>
             </Row>
-
         </div>
-
-
     );
 };
 

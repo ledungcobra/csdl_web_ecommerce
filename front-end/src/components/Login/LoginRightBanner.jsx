@@ -22,9 +22,6 @@ const LoginRightBanner = ({isLogin, location}) => {
         }
     }
 
-    console.log(location);
-    
-
     const changeLayoutHandler = (e) => {
         setIsLogin((prev) => !prev);
     }

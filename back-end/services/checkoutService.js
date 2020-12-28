@@ -118,12 +118,14 @@ module.exports.addAnInvoice = async (totalPrice, shipID, invoiceID, payID, di_id
                 insert into Invoice(Invoice_InvoiceDate,Invoice_TotalPrice,Id_ShipVoucher
                         ,Id_ProductVoucher,Id_TP,Id_DI,Id_Customer,Id_StatusInvoice)
                             values(getdate(),${totalPrice},${shipID},${invoiceID},${payID},${di_id},${id_customer},1)
-                          declare @id int                   
+                          declare @id int 
+                                           
                           set @id =(select max(id_invoice)
-                          from invoice
+                          from invoice 
                           where id_customer = ${id_customer})   
-                            ` + query;
-    console.log(QUERY_STRING);
+                            ` + query+ ` 
+                            delete from Good_Cart where Id_Customer = ${id_customer}
+                            `;
     return db.sql.query(QUERY_STRING);
 }
 
