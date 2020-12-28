@@ -65,6 +65,12 @@ const NavBar = () => {
 
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
+                                {loggedIn ?
+                                    <Dropdown.Item>
+                                        <Link to='/InfoInvoice'>Information Invoice</Link>
+                                    </Dropdown.Item>:<Dropdown.Item></Dropdown.Item>
+
+                                }
                                 <Dropdown.Item>
                                     {loggedIn ?
                                         <Link to='/profile'>Profile</Link>
@@ -75,7 +81,10 @@ const NavBar = () => {
                                 {
                                     loggedIn && <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>
                                 }
+
                             </Dropdown.Menu>
+
+
                         </Dropdown>
                     </Col>
                 </Row>

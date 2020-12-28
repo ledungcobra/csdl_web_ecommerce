@@ -1,5 +1,6 @@
 const asyncHandler = require("express-async-handler");
 const generateToken = require("../utils/generateToken.js");
+const {getInvoicesService} = require("../services/userService");
 const {rateGoodService} = require("../services/userService");
 const {addNewCustomer} = require("../services/userService");
 const {checkIfExistCustomer} = require("../services/userService");
@@ -140,11 +141,29 @@ const rateGoodController = asyncHandler(async (req, res) => {
 
 });
 
+const getInvoicesController = asyncHandler(async (req, res) => {
+
+    const userid = req.query.userid;
+    console.log(req.query)
+
+
+    const result = await getInvoicesService(userid);
+
+    if (result) {
+        res.status(201).json({result})
+    } else {
+        res.status(400)
+        throw new Error('Cannot rate this product');
+    }
+
+});
+
 
 module.exports = {
     authCustomer,
     getCustomerProfile,
     registerCustomer,
     putChangeCustomerProfile,
-    rateGoodController
+    rateGoodController,
+    getInvoicesController
 }

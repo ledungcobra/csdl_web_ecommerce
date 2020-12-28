@@ -1,5 +1,6 @@
 const express = require('express');
 const protect = require("../middleware/authMiddleware.js");
+const {getInvoicesController} = require("../controllsers/userController");
 const {rateGoodController} = require("../controllsers/userController");
 const {putChangeCustomerProfile} = require("../controllsers/userController");
 const {registerCustomer} = require("../controllsers/userController");
@@ -13,5 +14,6 @@ router.route('/login').post(authCustomer);
 router.route('/profile').get(protect, getCustomerProfile);
 router.route('/profile').put(protect,putChangeCustomerProfile);
 router.route('/rate').post(rateGoodController);
+router.route('/invoice').get(getInvoicesController);
 
 module.exports = router;
