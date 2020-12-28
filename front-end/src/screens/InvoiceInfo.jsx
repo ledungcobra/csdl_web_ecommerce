@@ -34,10 +34,10 @@ const InvoiceInfo = () => {
                                     <tr>
                                         <th>ID Invoice</th>
                                         <th>Voucher Shipping</th>
-                                        <th>Voucher Product </th>
-                                        <th>Status Invoice </th>
-                                        <th>Total Price Invoice </th>
-                                        <th>Date Invoice </th>
+                                        <th>Voucher Product</th>
+                                        <th>Status Invoice</th>
+                                        <th>Total Price Invoice</th>
+                                        <th>Date Invoice</th>
                                     </tr>
                                     </thead>
                                     <tbody>
@@ -59,16 +59,16 @@ const InvoiceInfo = () => {
 
                     )
                 })
-            }
+                }
 
-            <Row>
+                <Row>
                 <Col/>
                 <Col md={3}>
                 </Col>
 
-            </Row>
-        </div>
-    );
-}
+                </Row>
+                </div>
+                );
+            }
 
-export default InvoiceInfo;
+            export default InvoiceInfo;

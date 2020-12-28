@@ -14,7 +14,8 @@ const InvoiceItem = ({InvoiceItem})=>{
     useEffect(() => {
         axios.get('/api/users/invoice/cart/?invoiceID=' + InvoiceItem.Id_Invoice).then(r => {
             setInvoice(r.data.result)
-
+            console.log("cart")
+            console.log(r.data.result)
         }).catch(e => console.log(e));
 
     }, []);
@@ -25,6 +26,7 @@ const InvoiceItem = ({InvoiceItem})=>{
                 <thead>
                 <tr>
                     <th>ID Product</th>
+                    <th>Product Image</th>
                     <th>Product Name</th>
                     <th>Quality</th>
                     <th>Price</th>
@@ -39,6 +41,9 @@ const InvoiceItem = ({InvoiceItem})=>{
                             <tr>
                                 <td>
                                     {data.Id_GD}
+                                </td>
+                                <td>
+                                    <img className='w-25' src={data.Thumbnail_URL} alt=""/>
                                 </td>
 
                                 <td>

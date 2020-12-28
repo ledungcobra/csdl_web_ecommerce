@@ -124,10 +124,11 @@ module.exports.getInvoicesService= (userid) => {
 
 module.exports.getInvoiceCartService= (invoiceid) => {
     return new Promise((res,rej)=>{
-    db.sql.query(`   select * from Good_Invoice  where Id_Invoice = '${invoiceid}'
+    db.sql.query(`select gi.Id_GD ,gi.GD_Name GD_Name,gi.GD_Price GD_Price,gi.Supplier_Name Supplier_Name, gi.GI_Number GI_Number, Thumbnail_URL from Good_Invoice gi,GoodDetail gd  where gi.Id_Invoice = gd.Id_GD and gi.Id_Invoice= ${invoiceid}
        `).then(({recordsets}) => {
         if (recordsets[0].length > 0) {
             res(recordsets[0]);
+            console.log(recordsets)
         } else {
             rej('Cannot find invoice this user');
         }
