@@ -2,8 +2,8 @@ import {
     USER_PROCEED_CHECKOUT_FAIL,
     USER_PROCEED_CHECKOUT_REQUEST, USER_PROCEED_CHECKOUT_SUCCESS,
     USER_SELECT_INVOICE_VOUCHER,
-    USER_SELECT_SHIPPING_VOUCHER,
-    USER_SET_SHIPPING_USER_INFO, USER_SET_TYPE_PAY
+    USER_SELECT_SHIPPING_VOUCHER_REQUEST,
+    USER_SET_SHIPPING_USER_INFO, USER_SET_TOTAL_PRICE, USER_SET_TYPE_PAY
 } from "../constants/checkoutConstants";
 
 import axios from 'axios';
@@ -11,12 +11,14 @@ import axios from 'axios';
 
 export const setShippingVoucher = (shippingVoucher) => dispatch => {
     dispatch({
-        type: USER_SELECT_SHIPPING_VOUCHER,
+        type: USER_SELECT_SHIPPING_VOUCHER_REQUEST,
         payload: shippingVoucher
     })
+
+
 }
 
-export const setShippingUserInfo = (shippingInfo) => async dispatch => {
+export const setShippingUserInfo = (shippingInfo) => dispatch => {
 
     dispatch({
         type: USER_SET_SHIPPING_USER_INFO,
@@ -31,26 +33,43 @@ export const setInvoiceVoucher = (invoiceVoucher) => dispatch => {
     })
 }
 
-export const proceedCheckout = () => async (dispatch, getState) => {
+export const proceedCheckout = (totalPrice) => async (dispatch, getState) => {
 
     const {
-        userInfo,
         shippingVoucher,
-        invoiceVoucher
+        invoiceVoucher, typePay
     } = getState().shipping;
+    const deliveryID = getState().shipping.userInfo.id;
+    const {cartItems} = getState().cart;
+    const {userInfo} = getState().user
 
     dispatch({
         type: USER_PROCEED_CHECKOUT_REQUEST,
     });
 
+    if(!typePay){
+       return dispatch({
+            type:USER_PROCEED_CHECKOUT_FAIL,
+            payload:'Please choose payment method'
+        })
+    }
+
     try {
+
         await axios.post('/api/checkout', {
-                userInfo,
-                shippingVoucher,
-                invoiceVoucher
+                totalPrice,
+                shippingVoucherID: shippingVoucher && shippingVoucher.id ? shippingVoucher.id : null,
+                invoiceVoucherID: invoiceVoucher && invoiceVoucher.id ? invoiceVoucher.id : null,
+                typePayID: typePay.id,
+                userID: userInfo.id,
+                diID: deliveryID,
+                cartItems
             },
             {
-                contentType:'application/json'
+                headers:
+                    {
+                        contentType: 'application/json'
+                    }
             });
         dispatch({
             type: USER_PROCEED_CHECKOUT_SUCCESS
@@ -66,9 +85,17 @@ export const proceedCheckout = () => async (dispatch, getState) => {
     }
 }
 
-export const setUserTypePay = (typePay)=> async dispatch =>{
+export const setUserTypePay = (typePay) => dispatch => {
     dispatch({
-        type:USER_SET_TYPE_PAY,
-        payload:typePay
+        type: USER_SET_TYPE_PAY,
+        payload: typePay
+    })
+}
+export const setTotalPrice = () => (dispatch, getState) => {
+    console.log(getState().cart.totalPrice);
+
+    dispatch({
+        type: USER_SET_TOTAL_PRICE,
+        payload: getState().cart.totalPrice
     })
 }

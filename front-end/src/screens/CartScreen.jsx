@@ -9,6 +9,7 @@ import {Link} from "react-router-dom";
 import './CartScreen.css';
 import {Card, Col, Row} from "react-bootstrap";
 import Container from "react-bootstrap/Container";
+import {useHistory} from 'react-router-dom';
 
 const data = JSON.parse(localStorage.getItem("cartItems"));
 console.log(typeof data);
@@ -18,7 +19,10 @@ const CartScreen = () => {
 
 
     const {cartItems, totalPrice} = useSelector(state => state.cart);
-    const {userInfo: {id}} = useSelector(state => state.user);
+    const {userInfo} = useSelector(state => state.user);
+    const {id} = userInfo;
+
+    const history = useHistory();
 
     console.log("Hello " + id)
 
@@ -26,7 +30,15 @@ const CartScreen = () => {
         console.log('Debugger helloworld')
     }
 
+    const handleCheckOut = (e)=>{
+        e.preventDefault();
+        if(!id){
+            history.push('/login?login');
+        }else{
+            history.push('/checkout');
+        }
 
+    }
     return (
         <div className='d-flex flex-column'>
             <BreadCrumb title={'Cart'}/>
@@ -70,8 +82,10 @@ const CartScreen = () => {
                     </Row>
                 </div>
             </Card>
-            <Link to={'/checkout'} className='btn-primary my-3 mr-5 py-2 px-2 align-content-end align-self-end'
-                  style={{width: "100px"}}> Check Out</Link>
+            <Link  to='#'
+                  onClick={handleCheckOut}
+                  className='btn-primary  my-3 mr-5 py-2 px-2 align-content-end align-self-end'
+                  style={{width: "100px" , color: 'white !important'}}> Check Out</Link>
         </div>
     );
 };

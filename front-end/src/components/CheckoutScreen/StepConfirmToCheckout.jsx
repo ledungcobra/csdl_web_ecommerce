@@ -3,24 +3,38 @@ import {Card, Col, Row} from "react-bootstrap";
 import RowInCart from "./RowInCart";
 import {useDispatch, useSelector} from "react-redux";
 import Button from "react-bootstrap/Button";
+import {proceedCheckout} from "../../actions/checkoutActions";
+
 
 const StepConfirmToCheckout = props => {
 
-    const {cartItems, totalPrice} = useSelector(state => state.cart);
-    // const {selectedAddress} = useSelector(state=>state.shippingInfo);
-    const shippingInfo = {
-        name: 'Nguyen van X',
-        address: 'ABC, XYZ, GYZ, akljlkds, l;dks;lakd;l',
-        phoneNumber: '0971663834',
-        actualPrice: 10000999,
-        shippingVoucher: 1000,
-        discountVoucher: 1000
+    const {cartItems} = useSelector(state => state.cart);
+    const {userInfo, shippingVoucher, invoiceVoucher, totalPrice, loading, error} = useSelector(state => state.shipping);
+    const calcActualPrice = (totalPrice, shippingVoucher, invoiceVoucher) => {
 
+        if (!totalPrice) return 0;
+
+        const discountedPrice = Object.keys(invoiceVoucher).length > 0 ? Math.floor(totalPrice * (100 - +invoiceVoucher.value) / 100000) * 1000 : totalPrice;
+
+
+        let shippingPrice = 0
+
+        if (Object.keys(shippingVoucher).length !== 0) {
+            shippingPrice = Math.floor(+shippingVoucher.value * +shippingVoucher.price / 100000) * 1000;
+        }
+
+        return discountedPrice - shippingPrice;
     }
 
-    const handlerProceedCheckout = (e)=>{
+    const dispatch = useDispatch();
+
+
+    const actualPrice = calcActualPrice(totalPrice, shippingVoucher, invoiceVoucher);
+
+    const handlerProceedCheckout = (e) => {
         e.preventDefault();
 
+        dispatch(proceedCheckout(actualPrice));
     }
 
     return (
@@ -40,7 +54,6 @@ const StepConfirmToCheckout = props => {
                                 </tr>
                                 </thead>
                                 <tbody>
-
                                 {cartItems.map((item, index) => {
                                     return (
                                         <RowInCart
@@ -71,19 +84,28 @@ const StepConfirmToCheckout = props => {
                 </Col>
                 <Col>
                     <Card className='px-5 py-3'>
-                        <Row className='mb-1'><span>Receiver's name: </span><Col/><span>{shippingInfo.name}</span></Row>
-                        <Row className='mb-1'><span>Receiver's address: </span><span className='ml-1'> {shippingInfo.address}</span></Row>
+                        <Row className='mb-1'><span>Receiver's name: </span><Col/><span>{userInfo.name}</span></Row>
+                        <Row className='mb-1'><span>Receiver's address: </span><span
+                            className='ml-1'> {userInfo.address}</span></Row>
                         <Row
-                            className='mb-1'><span>Receiver's Phone N.o: </span><Col/><span>{shippingInfo.phoneNumber}</span></Row>
+                            className='mb-1'><span>Receiver's Phone N.o:
+                            </span><Col/><span>{userInfo.phonenumber}</span></Row>
                         <Row
-                            className='mb-1'><span>Applied Shipping Voucher: </span><Col/><span>- {shippingInfo.shippingVoucher}</span></Row>
+                            className='mb-1'><span>Applied Shipping Voucher:
+                            </span><Col/><span>- {shippingVoucher.name}</span></Row>
                         <Row
-                            className='mb-1'><span>Applied Discount Voucher: </span><Col/><span>-{shippingInfo.discountVoucher}</span></Row>
+                            className='mb-1'><span>Applied Invoice Voucher: </span><Col/><span>-{invoiceVoucher.name}</span></Row>
                         <hr/>
                         <Row
-                            className='mb-1'><span>Total price: </span><Col/><span>{shippingInfo.actualPrice}</span></Row>
+                            className='mb-1'><span>Total price: </span><Col/><span>{new Intl.NumberFormat('vi-vi', {
+                            style: 'currency',
+                            currency: 'VND'
+                        }).format(actualPrice)}</span></Row>
 
                     </Card>
+                    <span className={error ? 'text-danger' : 'text-success'}>{
+                        error ? error : !loading === false && 'Proceed checkout successfully'
+                    }</span>
                     <Button className='py-2 w-100' variant="primary"
                             onClick={handlerProceedCheckout}
                     >Proceed Checkout</Button>{' '}

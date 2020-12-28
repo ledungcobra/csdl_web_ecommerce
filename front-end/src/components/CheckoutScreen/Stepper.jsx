@@ -26,7 +26,7 @@ const useStyles = makeStyles((theme) => ({
 
 
 function getSteps() {
-    return ['Choose your address to ship', 'Choose the pay type', 'Create an ad'];
+    return ['Choose your address to ship', 'Choose the pay type', 'Confirm Checkout']
 }
 
 export const CheckoutContext = createContext(null);

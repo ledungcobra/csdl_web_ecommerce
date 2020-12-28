@@ -1,35 +1,38 @@
 import React, {createRef, useContext, useEffect, useRef, useState} from 'react';
 import {light} from "@material-ui/core/styles/createPalette";
 import axios from 'axios';
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {Link, useHistory} from 'react-router-dom';
 import {Card} from "@material-ui/core";
 import {Col, Row} from "react-bootstrap";
 import './CheckoutRightBanner.css'
 import {CheckoutContext} from "./Stepper";
+import {setTotalPrice, setShippingUserInfo} from "../../actions/checkoutActions";
 
 const CheckoutRightBanner = () => {
 
     const [shippingData, setShippingData] = useState({
-        name: 'asa',
+        name: '',
         phoneNumber: '',
         provinceOrCity: '',
         district: '',
         ward: '',
         address: ''
     });
+
     const [provinceData, setProvinceData] = useState([]);
     const [districtData, setDistrictData] = useState([]);
     const [wardData, setWardData] = useState([]);
     const {cartItems} = useSelector(state => state.cart);
     const {userInfo} = useSelector(state => state.user);
     const [address, setAddress] = useState([]);
-    const [currentAddress, setCurrentAddress] = useState(null);
+    const [currentUserInfo, setCurrentDeliveryInfo] = useState(null);
+    const dispatch = useDispatch();
 
     const {handleNext,handleBack} = useContext(CheckoutContext);
 
     const messageRef = createRef();
-    const history = useHistory()
+    const history = useHistory();
 
     useEffect(() => {
         axios.get(`/api/checkout/address/${userInfo.id}`)
@@ -37,8 +40,7 @@ const CheckoutRightBanner = () => {
                 setAddress(data);
 
                 if (data.length > 0) {
-                    setCurrentAddress(data[0]);
-
+                    setCurrentDeliveryInfo(data[0]);
                 }
             })
             .catch(e => console.log(e));
@@ -58,11 +60,10 @@ const CheckoutRightBanner = () => {
 
     const onSelectAddressChange = (e) => {
         const {value} = e.target;
-        console.log(value);
 
         const found = address.find(ad => ad.id === parseInt(value));
         console.log(found)
-        setCurrentAddress(found);
+        setCurrentDeliveryInfo(found);
     }
 
     //push cart to sql
@@ -104,7 +105,6 @@ const CheckoutRightBanner = () => {
                 userid: userInfo.id
             }, config).then(() => {
 
-
                 messageRef.current.innerHTML = 'Add address success';
                 setTimeout(() => {
                     messageRef.current.innerHTML = '';
@@ -112,6 +112,9 @@ const CheckoutRightBanner = () => {
                     axios.get(`/api/checkout/address/${userInfo.id}`)
                         .then(({data}) => {
                             setAddress(data);
+                            if(currentUserInfo == null){
+                                setCurrentDeliveryInfo(data[0]);
+                            }
                         })
                         .catch(e => console.log(e));
                 }, 1000)
@@ -170,13 +173,13 @@ const CheckoutRightBanner = () => {
                                     <div className="checkout-left-basket ">
                                         <h4>Continue to basket</h4>
                                         {
-                                            currentAddress &&
+                                            currentUserInfo &&
                                             <ul className='px-3'>
-                                                <li>Receiver's name<i>: </i> <span>{currentAddress.name}</span></li>
-                                                <li>Ward<i>: </i><span>{currentAddress.ward}</span></li>
-                                                <li>District<i>: </i> <span>{currentAddress.district}</span></li>
-                                                <li>Province<i>: </i><span>{currentAddress.province}</span></li>
-                                                <li>Address<i>: </i> <span></span> {currentAddress.address}</li>
+                                                <li>Receiver's name<i>: </i> <span>{currentUserInfo.name}</span></li>
+                                                <li>Ward<i>: </i><span>{currentUserInfo.ward}</span></li>
+                                                <li>District<i>: </i> <span>{currentUserInfo.district}</span></li>
+                                                <li>Province<i>: </i><span>{currentUserInfo.province}</span></li>
+                                                <li>Address<i>: </i> <span></span> {currentUserInfo.address}</li>
                                             </ul>
                                         }
 
@@ -298,8 +301,17 @@ const CheckoutRightBanner = () => {
                                                     <Link class='direction-button' onClick={(e) => {
                                                         e.preventDefault();
                                                         //Store current Address into reducer
+                                                        if(currentUserInfo!=null){
+                                                            dispatch(setShippingUserInfo(currentUserInfo));
+                                                            handleNext();
+                                                        }else{
+                                                            messageRef.current.innerHTML = 'You must choose address to ship to'
+                                                            messageRef.current.className = 'text-danger';
+                                                            setTimeout(()=>{
+                                                                messageRef.current.innerHTML = '';
 
-                                                        handleNext();
+                                                            },1000)
+                                                        }
                                                     }} to="/">Make a Payment <span
                                                         aria-hidden="true"/></Link>
                                                 </div>

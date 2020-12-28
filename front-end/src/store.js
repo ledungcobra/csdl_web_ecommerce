@@ -38,7 +38,8 @@ const initialState = {
         userInfo: {},
         shippingVoucher: {},
         invoiceVoucher: {},
-        loading: false
+        loading: false,
+        actualPrice: 0
     }
 
 }

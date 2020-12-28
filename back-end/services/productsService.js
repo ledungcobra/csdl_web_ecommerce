@@ -38,7 +38,8 @@ module.exports.getProducts = (keyword, page, limit) => {
     return new Promise((res, rej) => {
         const QUERY_STATEMENT = `SELECT * 
                         FROM GOODPRESENTED 
-                        WHERE dbo.ufn_removeMark(GD_NAME) LIKE dbo.ufn_removeMark('%${keyword}%')
+                        WHERE 
+                        dbo.ufn_removeMark(GD_NAME) LIKE dbo.ufn_removeMark('%${keyword}%')
                         ORDER BY ID_GOOD 
                         OFFSET ${(page - 1) * limit} 
                         ROWS FETCH NEXT ${limit} ROWS ONLY

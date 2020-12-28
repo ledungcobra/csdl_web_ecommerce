@@ -1,4 +1,4 @@
-import React, {useContext, useEffect, useRef, useState} from 'react';
+import React, {createRef, useContext, useEffect, useRef, useState} from 'react';
 import {Card, Col, Row} from "react-bootstrap";
 import axios from 'axios';
 import Link from "@material-ui/core/Link";
@@ -9,9 +9,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {useHistory} from 'react-router-dom'
 import {
     setInvoiceVoucher,
-    setShippingUserInfo,
-    setShippingVoucher,
-    setUserInfo,
+    setShippingVoucher, setTotalPrice,
     setUserTypePay
 } from "../../actions/checkoutActions";
 
@@ -22,12 +20,14 @@ const StepChoseTypePage = props => {
     const [invoiceVoucher, setInvoiceVouchers] = useState([]);
     const [shippingVoucher, setShippingVouchers] = useState([]);
     const {userInfo} = useSelector(state => state.user);
-    // const []
     const [pageObj, setPageObj] = useState({});
-
     const {handleBack, handleNext} = useContext(CheckoutContext);
     const history = useHistory();
+
+    const scrollRef = createRef();
     const dispatch = useDispatch();
+
+    const price = useSelector(state => state.shipping).userInfo.price;
 
     useEffect(() => {
 
@@ -43,12 +43,14 @@ const StepChoseTypePage = props => {
                     ref.current.className = 'text-danger';
                 }
             })
+        scrollRef.current.scrollIntoView({behavior: "smooth"});
     }, []);
 
     useEffect(() => {
 
         axios.get(`/api/checkout/voucher?id=${userInfo.id}&type=1`)
             .then(({data}) => {
+                console.log(data)
                 setInvoiceVouchers(data);
             }).catch(e => console.log(e));
 
@@ -58,31 +60,78 @@ const StepChoseTypePage = props => {
 
         axios.get(`/api/checkout/voucher?id=${userInfo.id}&type=2`)
             .then(({data}) => {
-                setShippingVouchers(data);
+                setShippingVouchers(data.map(item => ({...item, price})));
             }).catch(e => console.log(e));
 
     }, [])
 
-    dispatch(setShippingUserInfo(userInfo));
 
     const onFormChange = (e) => {
-        const {value, name, id} = e.target;
-        console.log(e.target);
+        let {value, name, id} = e.target;
+        let val = null;
+        let shippingPrice = null;
+
+        if (e.target.innerHTML) {
+            id = (Array.from(e.target.querySelectorAll('option')).find(element => element.value === value)).id;
+
+            if (name === 'shippingVoucher') {
+                const found = shippingVoucher.find(voucher => +voucher.id === +id);
+                val = found.value;
+                shippingPrice = found.price;
+
+            }
+
+            if (name === 'invoiceVoucher') {
+                val = invoiceVoucher.find(voucher => +voucher.id === +id).value;
+
+            }
+        }
 
         setPageObj((prev) => {
-            const new_state = {
+            let new_state = {
                 ...prev,
-                [name]: {name: value, id}
+                [name]: {name: value, id, value: val}
             }
-            console.log(new_state)
+
+            if (name === 'shippingVoucher') {
+                new_state = {
+                    ...new_state,
+                    shippingVoucher: {
+                        ...new_state.shippingVoucher,
+                        price: shippingPrice
+                    }
+                }
+
+            }
             return new_state
         })
+    }
 
+    const handleNextButton = (e) => {
+        e.preventDefault();
+
+        console.log('Set price');
+        dispatch(setTotalPrice());
+
+
+        if (pageObj.shippingVoucher) {
+            dispatch(
+                setShippingVoucher(pageObj.shippingVoucher));
+        }
+
+        if (pageObj.invoiceVoucher) {
+            dispatch(setInvoiceVoucher(pageObj.invoiceVoucher));
+        }
+
+        if (pageObj.typePay) {
+            dispatch(setUserTypePay(pageObj.typePay));
+        }
+        handleNext();
 
     }
 
     return (
-        <div onChange={onFormChange}>
+        <div ref={scrollRef}>
             <Card className='py-3 px-3 mx-5'>
 
                 <Container>
@@ -98,10 +147,12 @@ const StepChoseTypePage = props => {
                         <Col>
                             <Row>
                                 <Col className='d-flex justify-content-center align-items-center'>
-                                    <ul>
+                                    <ul onChange={onFormChange}>
                                         {
                                             [{id: -100, name: 'Select type to pay'}, ...typePays].map((type, index) => (
-                                                <div key={type.name} className='d-flex'>
+                                                <div key={type.name} className='d-flex'
+
+                                                >
                                                     <input type='radio' name='typePay'
                                                            id={type.id}
                                                            value={type.name}/>
@@ -118,34 +169,42 @@ const StepChoseTypePage = props => {
                                         w-100
                                         align-content-center'>
                                         <select name='invoiceVoucher' className='form-control my-2 mb-3'
-                                                placeholder='Select invoice voucher'>
+                                                placeholder='Select invoice voucher'
+                                                onChange={onFormChange}
+                                        >
                                             {
                                                 [{
+                                                    value: 0,
                                                     id: -100,
                                                     name: 'Select invoice voucher'
                                                 }, ...invoiceVoucher].map((voucher, i) =>
                                                     (
-                                                        <option key={voucher.id} selected={i === 0}>
+                                                        <option id={voucher.id} key={voucher.id}
+                                                                selected={i === 0} onClick={onFormChange}>
                                                             {i !== 0 ? voucher.name + ' ' + voucher.value + '%' : voucher.name}
                                                         </option>
                                                     ))
                                             }
                                         </select>
                                         <select name='shippingVoucher' className='form-control my-2 mb-3'
+                                                onChange={onFormChange}
                                                 placeholder='Select shipping voucher'>
+
                                             {
                                                 [{
+                                                    value: 0,
                                                     id: -100,
                                                     name: 'Select shipping voucher'
                                                 }, ...shippingVoucher].map((voucher, i) =>
                                                     (
-                                                        <option key={voucher.id}>
+                                                        <option
+                                                            id={voucher.id}
+                                                            key={voucher.id}>
                                                             {i !== 0 ? (voucher.name + ' ' + voucher.value + '%') : voucher.name}
                                                         </option>
                                                     ))
                                             }
                                         </select>
-                                        <button type="submit" className="btn btn-primary">Submit</button>
                                     </div>
                                 </Col>
                             </Row>
@@ -166,43 +225,13 @@ const StepChoseTypePage = props => {
                         aria-hidden="true"/></button>
                 </div>
                 <button className="checkout-right-basket align-self-start" style={{border: "none"}}>
-                    <Link class='direction-button' onClick={(e) => {
-                        e.preventDefault();
-
-                        if (pageObj.typePage) {
-                            if (pageObj.shippingVoucher) {
-                                dispatch(
-                                    setShippingVoucher({
-                                        id: pageObj.shippingVoucher.id,
-                                        name: pageObj.shippingVoucher.name
-                                    })
-                                );
-                            }
-
-                            if (pageObj.invoiceVoucher) {
-                                dispatch(setInvoiceVoucher(
-                                    {
-                                        id: pageObj.invoiceVoucher.id,
-                                        name: pageObj.invoiceVoucher.name
-                                    })
-                                );
-                            }
-
-                            if(pageObj.typePay){
-                                dispatch(setUserTypePay({
-                                    id: pageObj.typePay.id,
-                                    name: pageObj.typePay.name
-                                }));
-                            }
-                            handleNext();
-                        }
-
-                    }} to="/">Make a Payment <span
+                    <Link class='direction-button' onClick={handleNextButton} to="/">Make a Payment <span
                         aria-hidden="true"/></Link>
                 </button>
             </Row>
         </div>
-    );
+    )
+        ;
 };
 
 StepChoseTypePage.propTypes = {};
