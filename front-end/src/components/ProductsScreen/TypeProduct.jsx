@@ -2,14 +2,13 @@ import SingleProductItem from "./SingleProductItem";
 import {Col} from "react-bootstrap";
 import React, {useEffect, useState} from "react";
 import axios from "axios";
+import {Pagination} from "@material-ui/lab";
 
-const TypeProducts = ({url}) => {
+const TypeProducts = ({url,page}) => {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-
-
-        axios.get(url).then(r => {
+        axios.get(url+page).then(r => {
             {
                 setProduct(r.data)
             }
@@ -19,9 +18,11 @@ const TypeProducts = ({url}) => {
         <div>
             {product.map((dataProd) => {
                 return (
-                    <SingleProductItem
+                    <div><SingleProductItem
                         key={dataProd.Id_GD}
                         product={dataProd}/>
+                    </div>
+
                 )
             })}
         </div>
@@ -30,4 +31,4 @@ const TypeProducts = ({url}) => {
 
 }
 
-export  default TypeProducts
+export default TypeProducts

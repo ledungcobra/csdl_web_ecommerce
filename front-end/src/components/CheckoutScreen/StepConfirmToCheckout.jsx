@@ -10,6 +10,7 @@ const StepConfirmToCheckout = props => {
 
     const {cartItems} = useSelector(state => state.cart);
     const {userInfo, shippingVoucher, invoiceVoucher, totalPrice, loading, error} = useSelector(state => state.shipping);
+
     const calcActualPrice = (totalPrice, shippingVoucher, invoiceVoucher) => {
 
         if (!totalPrice) return 0;
@@ -106,6 +107,7 @@ const StepConfirmToCheckout = props => {
                     <span className={error ? 'text-danger' : 'text-success'}>{
                         error ? error : !loading === false && 'Proceed checkout successfully'
                     }</span>
+
                     <Button className='py-2 w-100' variant="primary"
                             onClick={handlerProceedCheckout}
                     >Proceed Checkout</Button>{' '}

@@ -15,7 +15,8 @@ module.exports.getType = asyncHandler(
 ;
 module.exports.getProductByType = asyncHandler(async(req,res)=>{
     console.log(req.params)
-    const result = await service.getProductByTypeService(req.params.type);
+    console.log(req.query)
+    const result = await service.getProductByTypeService(req.params.type, req.query);
     res.json(result);
 })
 

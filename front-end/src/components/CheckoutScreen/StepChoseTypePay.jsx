@@ -76,9 +76,11 @@ const StepChoseTypePage = props => {
 
             if (name === 'shippingVoucher') {
                 const found = shippingVoucher.find(voucher => +voucher.id === +id);
-                val = found.value;
-                shippingPrice = found.price;
 
+                if(found){
+                    val = found.value;
+                    shippingPrice = found.price;
+                }
             }
 
             if (name === 'invoiceVoucher') {
