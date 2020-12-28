@@ -71,6 +71,9 @@ export const proceedCheckout = (totalPrice) => async (dispatch, getState) => {
                         contentType: 'application/json'
                     }
             });
+
+        localStorage.setItem("cartItems" ,JSON.stringify([]));
+
         dispatch({
             type: USER_PROCEED_CHECKOUT_SUCCESS
         })

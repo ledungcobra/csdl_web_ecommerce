@@ -112,7 +112,7 @@ module.exports.getVoucher = (type, cus_id) => {
 module.exports.addAnInvoice = async (totalPrice, shipID, invoiceID, payID, di_id, id_customer, cartItems) => {
 
     let query = `insert into Good_Invoice(Id_GD,Id_Invoice,gi_number) values`
-    query += cartItems.reduce((acc, item) => `(${item.product},@id,${item.qty}),`, '');
+    query += cartItems.reduce((acc, item) => acc + `(${item.product},@id,${item.qty}),`, '');
     query = query.slice(0, query.length - 1);
     let QUERY_STRING = `
                 insert into Invoice(Invoice_InvoiceDate,Invoice_TotalPrice,Id_ShipVoucher

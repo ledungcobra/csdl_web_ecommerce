@@ -4,6 +4,7 @@ import {
     CART_REDUCE_ITEM,
     CART_REMOVE_ITEM
 } from '../constants/cartConstants';
+import {USER_PROCEED_CHECKOUT_SUCCESS} from "../constants/checkoutConstants";
 
 export const cartReducer = (state = {cartItems: [],totalPrice: 0}, action) => {
     switch (action.type) {
@@ -47,7 +48,6 @@ export const cartReducer = (state = {cartItems: [],totalPrice: 0}, action) => {
                     cartItems: [...state.cartItems, item]
                 }
             }
-
         case CART_REDUCE_ITEM:
             const item_reduce = action.payload;
 
@@ -78,7 +78,16 @@ export const cartReducer = (state = {cartItems: [],totalPrice: 0}, action) => {
                 cartItems,
                 totalPrice: cartItems.reduce((acc,item)=>acc+Math.floor( +item.qty*+item.price*(100-item.discount)/100000)*1000 ,0)
             }
+
+        case USER_PROCEED_CHECKOUT_SUCCESS:
+            return {
+                ...state,
+                cartItems: [],
+                totalPrice: 0
+            }
+
         default:
+
             return state
     }
 }

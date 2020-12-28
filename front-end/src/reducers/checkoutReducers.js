@@ -63,6 +63,9 @@ export const userCheckoutReducer = (state = {
         case USER_PROCEED_CHECKOUT_SUCCESS:
             return {
                 ...state,
+                shippingVoucher: {},
+                invoiceVoucher: {},
+                totalPrice: 0,
                 loading: false
             }
         case USER_PROCEED_CHECKOUT_FAIL:
