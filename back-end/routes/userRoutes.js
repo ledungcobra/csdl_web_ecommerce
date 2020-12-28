@@ -1,5 +1,6 @@
 const express = require('express');
 const protect = require("../middleware/authMiddleware.js");
+const {getInvoiceCartController} = require("../controllsers/userController");
 const {getInvoicesController} = require("../controllsers/userController");
 const {rateGoodController} = require("../controllsers/userController");
 const {putChangeCustomerProfile} = require("../controllsers/userController");
@@ -15,5 +16,6 @@ router.route('/profile').get(protect, getCustomerProfile);
 router.route('/profile').put(protect,putChangeCustomerProfile);
 router.route('/rate').post(rateGoodController);
 router.route('/invoice').get(getInvoicesController);
+router.route('/invoice/cart').get(getInvoiceCartController);
 
 module.exports = router;

@@ -114,7 +114,20 @@ module.exports.getInvoicesService= (userid) => {
     db.sql.query(`   select * from Invoice  where Id_Customer = '${userid}'
        `).then(({recordsets}) => {
         if (recordsets[0].length > 0) {
-            res(recordsets[0][0]);
+            res(recordsets[0]);
+        } else {
+            rej('Cannot find invoice this user');
+        }
+    }).catch(e => rej(e));
+});
+}
+
+module.exports.getInvoiceCartService= (invoiceid) => {
+    return new Promise((res,rej)=>{
+    db.sql.query(`   select * from Good_Invoice  where Id_Invoice = '${invoiceid}'
+       `).then(({recordsets}) => {
+        if (recordsets[0].length > 0) {
+            res(recordsets[0]);
         } else {
             rej('Cannot find invoice this user');
         }
