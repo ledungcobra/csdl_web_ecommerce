@@ -8,7 +8,6 @@ const checkoutService = require("../services/checkoutService");
 // @access Public
 module.exports.getProvince = asyncHandler(
     async (req, res) => {
-        console.log("Hello")
         const result = await checkoutService.getProvince();
         res.json(result);
 
@@ -36,6 +35,27 @@ module.exports.getUserAddress = asyncHandler(async(req,res)=>{
     res.json(result);
 });
 
+module.exports.getTypePay = asyncHandler(async(req,res)=>{
+   const result = await checkoutService.getTypePay();
+   res.json(result);
+});
+
+module.exports.getVoucher = asyncHandler(async (req,res)=>{
+    const {type} = req.query;
+    const {id} = req.query ;
+
+    const result = await checkoutService.getVoucher(type,id);
+    res.json(result);
+
+});
 
 
+module.exports.postInvoice = asyncHandler(async(req,res)=>{
 
+    const {totalPrice,shippingVoucherID,invoiceVoucherID,typePayID,userID,diID,cartItems} = req.body;
+    await checkoutService.addAnInvoice(totalPrice,shippingVoucherID,invoiceVoucherID,typePayID,diID,userID,cartItems)
+    res.json({
+        message:'Oke'
+    });
+
+})

@@ -1,41 +1,50 @@
-import React, {useEffect, useState} from 'react';
+import React, {createRef, useContext, useEffect, useRef, useState} from 'react';
 import {light} from "@material-ui/core/styles/createPalette";
 import axios from 'axios';
-import {useSelector} from "react-redux";
-import {useHistory} from 'react-router-dom';
+import {useDispatch, useSelector} from "react-redux";
+import {Link, useHistory} from 'react-router-dom';
 import {Card} from "@material-ui/core";
 import {Col, Row} from "react-bootstrap";
-import Dropdown from "react-bootstrap/Dropdown";
-import DropdownMenu from "react-bootstrap/DropdownMenu";
+import './CheckoutRightBanner.css'
+import {CheckoutContext} from "./Stepper";
+import {setTotalPrice, setShippingUserInfo} from "../../actions/checkoutActions";
 
 const CheckoutRightBanner = () => {
 
-    let data = [{name: "HCM", id: 1}, {name: "YY", id: 2}, {name: "ZZ", id: 3}];
     const [shippingData, setShippingData] = useState({
-        name: 'asa',
+        name: '',
         phoneNumber: '',
         provinceOrCity: '',
         district: '',
         ward: '',
         address: ''
     });
+
     const [provinceData, setProvinceData] = useState([]);
     const [districtData, setDistrictData] = useState([]);
     const [wardData, setWardData] = useState([]);
     const {cartItems} = useSelector(state => state.cart);
     const {userInfo} = useSelector(state => state.user);
     const [address, setAddress] = useState([]);
-    const [currentAddress, setCurrentAddress] = useState(null);
+    const [currentUserInfo, setCurrentDeliveryInfo] = useState(null);
+    const dispatch = useDispatch();
 
-    const history = useHistory()
+    const {handleNext,handleBack} = useContext(CheckoutContext);
+
+    const messageRef = createRef();
+    const history = useHistory();
 
     useEffect(() => {
         axios.get(`/api/checkout/address/${userInfo.id}`)
             .then(({data}) => {
-                console.log(data)
-                setAddress(data)
+                setAddress(data);
+
+                if (data.length > 0) {
+                    setCurrentDeliveryInfo(data[0]);
+                }
             })
             .catch(e => console.log(e));
+
 
     }, [])
     const onFormChange = (e) => {
@@ -51,51 +60,47 @@ const CheckoutRightBanner = () => {
 
     const onSelectAddressChange = (e) => {
         const {value} = e.target;
-        const found = address.filter(ad => ad.id === value);
 
-        setCurrentAddress(found[0]);
-
-
-    }
-
-    //push cart to sql
-    const onFormSubmit = (e) => {
-
-        if (userInfo.id) {
-            console.log(userInfo.id)
-            const config = {
-                headers: {
-                    'Content-Type': 'application/json'
-
-                }
-            }
-            axios.post('/api/cart/', {
-                cart: cartItems,
-                user: userInfo.id
-            }, config).then(() => {
-            }).catch(e => console.log(e));
-        } else {
-            console.log("fail")
-            history.push(`/login?login`);
-        }
-
-
+        const found = address.find(ad => ad.id === parseInt(value));
+        console.log(found)
+        setCurrentDeliveryInfo(found);
     }
 
     const onAddAddress = (e) => {
+        e.preventDefault();
+
         if (userInfo.id) {
             console.log(userInfo.id)
             const config = {
                 headers: {
                     'Content-Type': 'application/json'
-
                 }
             }
             axios.post('/api/checkout/addAddress', {
                 shippingData: shippingData,
                 userid: userInfo.id
             }, config).then(() => {
-            }).catch(e => console.log(e));
+
+                messageRef.current.innerHTML = 'Add address success';
+                setTimeout(() => {
+                    messageRef.current.innerHTML = '';
+
+                    axios.get(`/api/checkout/address/${userInfo.id}`)
+                        .then(({data}) => {
+                            setAddress(data);
+                            if(currentUserInfo == null){
+                                setCurrentDeliveryInfo(data[0]);
+                            }
+                        })
+                        .catch(e => console.log(e));
+                }, 1000)
+            }).catch(e => {
+                messageRef.current.innerHTML = 'Add address fail';
+                setTimeout(() => {
+                    messageRef.current.innerHTML = '';
+                }, 1000)
+
+            });
         } else {
             console.log("fail")
             history.push(`/login?login`);
@@ -131,7 +136,6 @@ const CheckoutRightBanner = () => {
 
     }, [shippingData])
 
-
     return (
         <div>
             <div>
@@ -141,33 +145,39 @@ const CheckoutRightBanner = () => {
                     <div className="checkout-left">
                         <Row>
                             <Col md={3}>
-                                <Card className='d-flex justify-content-center align-content-center py-3'>
+                                <Card className='d-flex flex-column justify-content-center align-content-center p-3'>
                                     <div className="checkout-left-basket ">
                                         <h4>Continue to basket</h4>
                                         {
-                                            currentAddress &&
-                                            <ul>
-                                                <li>Ward: <i>-</i> <span>{currentAddress.ward}</span></li>
-                                                <li>District <i>-</i> <span>{currentAddress.district}</span></li>
-                                                <li>Province <i>-</i> <span>{currentAddress.province}</span></li>
-                                                <li>Address <i>-</i> <span></span> {currentAddress.address}</li>
+                                            currentUserInfo &&
+                                            <ul className='px-3'>
+                                                <li>Receiver's name<i>: </i> <span>{currentUserInfo.name}</span></li>
+                                                <li>Ward<i>: </i><span>{currentUserInfo.ward}</span></li>
+                                                <li>District<i>: </i> <span>{currentUserInfo.district}</span></li>
+                                                <li>Province<i>: </i><span>{currentUserInfo.province}</span></li>
+                                                <li>Address<i>: </i> <span></span> {currentUserInfo.address}</li>
                                             </ul>
                                         }
 
-                                        <select className='d-block w-100 form-control py-0'
-                                                onChange={onSelectAddressChange}>
-                                            {
-                                                address.map(ad => (<option value={ad.id}>{ad.address}</option>))
-                                            }
 
-                                        </select>
                                     </div>
+                                    <select className='form-control w-90 mr-5'
+                                            name='user-address'
+                                            required
+                                            onChange={onSelectAddressChange}>
+                                        {
+                                            address.map(ad => (<option key={ ad.id }value={ad.id}>{ad.address}</option>))
+                                        }
+
+                                    </select>
                                 </Card>
                             </Col>
                             <Col md={9}>
                                 <Card className='py-3 px-3'>
-                                    <h4>Add a new Details</h4>
-                                    <form action="#" method="post" className="creditly-card-form agileinfo_form"
+                                    <h4>Add a New Address</h4>
+                                    <form action="#" method="post"
+                                          onSubmit={onAddAddress}
+                                          className="creditly-card-form agileinfo_form"
                                           onChange={onFormChange}>
                                         <section className="creditly-wrapper wthree, w3_agileits_wrapper">
                                             <div className="information-wrapper">
@@ -175,7 +185,7 @@ const CheckoutRightBanner = () => {
                                                     <div className="controls">
                                                         <label className="control-label">Full name: </label>
                                                         <input className="billing-address-name form-control" type="text"
-                                                               name="name" placeholder="Full name"/>
+                                                               name="name" placeholder="Full name" required/>
                                                     </div>
                                                     <div className="w3_agileits_card_number_grids">
                                                         <div className="w3_agileits_card_number_grid_left">
@@ -183,6 +193,7 @@ const CheckoutRightBanner = () => {
                                                                 <label className="control-label">Mobile number:</label>
                                                                 <input className="form-control" type="text"
                                                                        name='phoneNumber'
+                                                                       required
                                                                        placeholder="Mobile number"/>
                                                             </div>
                                                         </div>
@@ -191,7 +202,7 @@ const CheckoutRightBanner = () => {
                                                                 <label className="control-label">Province/City: </label>
                                                                 <select className='d-block w-100 form-control py-0'
                                                                         name='provinceOrCity'
-
+                                                                        required
                                                                 >
                                                                     {
                                                                         provinceData.map(province =>
@@ -199,7 +210,6 @@ const CheckoutRightBanner = () => {
                                                                                 {province.name}
                                                                             </option>))
                                                                     }
-
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -209,6 +219,7 @@ const CheckoutRightBanner = () => {
                                                         <label className="control-label">District: </label>
                                                         <select className='d-block w-100 form-control py-0'
                                                                 name='district'
+                                                                required
                                                         >
                                                             {
                                                                 districtData.map(datum => <option value={datum.id}>
@@ -221,6 +232,7 @@ const CheckoutRightBanner = () => {
                                                         <label className="control-label">Ward: </label>
                                                         <select className='d-block w-100 form-control py-0'
                                                                 name='ward'
+                                                                required
                                                         >
                                                             {
                                                                 wardData.map(datum => <option value={datum.id}>
@@ -233,28 +245,57 @@ const CheckoutRightBanner = () => {
                                                         <label className="control-label">Address:</label>
                                                         <input className="form-control" type="text"
                                                                name='address'
+                                                               required
                                                                placeholder="Address"/>
                                                     </div>
                                                 </div>
 
                                             </div>
                                         </section>
+                                        <span ref={messageRef} className='text-success'/>
+
+                                        <Row>
+
+                                            <Col className='d-flex flex-column'>
+                                                <button className="submit check_out" type='submit'
+                                                >Add New
+                                                    Address
+                                                </button>
+
+                                            </Col>
+                                        </Row>
+                                        <Row className='d-flex justify-content-between px-2'>
+                                                <div className="checkout-right-basket align-self-start">
+                                                    <Link className='direction-button-back' onClick={(e) => {
+                                                        e.preventDefault();
+                                                        handleBack();
+                                                    }} to="/">Back Step<span
+                                                        aria-hidden="true"/></Link>
+                                                </div>
+                                                <Col/>
+                                                <div className="checkout-right-basket align-self-start">
+                                                    <Link class='direction-button' onClick={(e) => {
+                                                        e.preventDefault();
+                                                        //Store current Address into reducer
+                                                        if(currentUserInfo!=null){
+                                                            dispatch(setShippingUserInfo(currentUserInfo));
+                                                            handleNext();
+                                                        }else{
+                                                            messageRef.current.innerHTML = 'You must choose address to ship to'
+                                                            messageRef.current.className = 'text-danger';
+                                                            setTimeout(()=>{
+                                                                messageRef.current.innerHTML = '';
+
+                                                            },1000)
+                                                        }
+                                                    }} to="/">Make a Payment <span
+                                                        aria-hidden="true"/></Link>
+                                                </div>
+                                        </Row>
                                     </form>
-                                    <button className="submit check_out" type='button' onClick={onAddAddress}>Add New
-                                        Address
-                                    </button>
-                                    <div className="checkout-right-basket">
-                                        <a href="/">Make a Payment <span
-                                            className="glyphicon glyphicon-chevron-right" aria-hidden="true"/></a>
-                                    </div>
-
                                 </Card>
-
                             </Col>
-
                         </Row>
-
-
                     </div>
                 </div>
             </div>

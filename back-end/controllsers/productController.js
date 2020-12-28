@@ -36,7 +36,7 @@ module.exports.getProducts = asyncHandler(async (req, res) => {
 
     } catch (e) {
         res.status(400);
-        throw new Error('Oops there is no products here');
+        throw new Error('Oops there is no products here'+ e);
     }
 });
 

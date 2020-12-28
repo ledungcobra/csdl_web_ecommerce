@@ -7,13 +7,14 @@ const LoginForm = ()=> {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const dispatch = useDispatch();
-    const {loading, userInfo} = useSelector(state => state.user);
+    const {loading, userInfo,error} = useSelector(state => state.user);
 
 
     const submitLoginHandler = (e) => {
         e.preventDefault();
         dispatch(login(email, password))
     }
+
 
     return (<div className="form">
         <h2>Login to your account</h2>
@@ -24,10 +25,15 @@ const LoginForm = ()=> {
                    name="password" value={password} placeholder="Password" required/>
             <input type="submit" value="Login"/>
         </form>
+
+
         {loading && (
             <div className="spinner-grow text-success" role="status">
                 <span className="sr-only">Loading...</span>
             </div>
+        )}
+        {error && (
+                <span className="text-danger">{error}</span>
         )}
     </div>);
 };
