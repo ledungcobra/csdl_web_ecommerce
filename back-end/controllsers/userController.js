@@ -1,5 +1,8 @@
 const asyncHandler = require("express-async-handler");
 const generateToken = require("../utils/generateToken.js");
+const {getInvoiceCartService} = require("../services/userService");
+const {getInvoicesService} = require("../services/userService");
+const {rateGoodService} = require("../services/userService");
 const {addNewCustomer} = require("../services/userService");
 const {checkIfExistCustomer} = require("../services/userService");
 const {getCustomerInfoDetail} = require("../services/userService");
@@ -17,12 +20,14 @@ const authCustomer = asyncHandler(async (req, res) => {
         const user = await getCustomerAuth(email);
         console.log("get user" + user)
         if (user['CUSTOMER_PASSWORD'].trim() === password) {
-            const {CUSTOMER_NAME} = user;
+            const {CUSTOMER_NAME,ID_CUSTOMER} = user;
             res.json({
                 token: generateToken(email),
                 email,
                 name: CUSTOMER_NAME,
-                message: 'success'
+                message: 'success',
+                id:ID_CUSTOMER
+
             });
 
         } else {
@@ -119,9 +124,65 @@ const putChangeCustomerProfile = asyncHandler(async (req, res) => {
 });
 
 
+const rateGoodController = asyncHandler(async (req, res) => {
+
+    const {userid, goodid, rate} = req.body;
+    console.log(req.body)
+
+
+    const result = await rateGoodService(userid, goodid, rate);
+
+    if (result) {
+        res.status(201).json({
+        })
+    } else {
+        res.status(400)
+        throw new Error('Cannot rate this product');
+    }
+
+});
+
+const getInvoicesController = asyncHandler(async (req, res) => {
+
+    const userid = req.query.userid;
+    console.log(req.query)
+
+
+    const result = await getInvoicesService(userid);
+
+    if (result) {
+        res.status(201).json({result})
+    } else {
+        res.status(400)
+        throw new Error('Cannot rate this product');
+    }
+
+});
+
+const getInvoiceCartController = asyncHandler(async (req, res) => {
+
+    const invoiceid = req.query.invoiceID;
+    console.log(req.query)
+
+
+    const result = await getInvoiceCartService(invoiceid);
+
+    if (result) {
+        res.status(201).json({result})
+    } else {
+        res.status(400)
+        throw new Error('Cannot rate this product');
+    }
+
+});
+
+
 module.exports = {
     authCustomer,
     getCustomerProfile,
     registerCustomer,
-    putChangeCustomerProfile
+    putChangeCustomerProfile,
+    rateGoodController,
+    getInvoicesController,
+    getInvoiceCartController
 }

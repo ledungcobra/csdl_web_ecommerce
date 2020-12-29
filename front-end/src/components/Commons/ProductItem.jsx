@@ -1,10 +1,18 @@
 import React, {useEffect} from 'react';
 import PropTypes from 'prop-types';
 import './ProductItem.css'
-import  FormAddCart from './FormAddCart'
+import {useHistory} from 'react-router-dom';
+
+import FormAddCart from './FormAddCart'
 
 
 const ProductItem = ({product}) => {
+
+    const history = useHistory();
+
+    const onClickProductHandler = (e) => {
+        history.push(`/product/${product.productId}`);
+    }
 
     return (
         <div className="col-md-3 w3ls_w3l_banner_left product-item">
@@ -16,18 +24,12 @@ const ProductItem = ({product}) => {
                     <div className="agile_top_brand_left_grid1">
                         <figure>
                             <div className="snipcart-item block">
-                                <div className="snipcart-thumb">
-                                    <a href="single.html"><img src={product.imageUrl} alt=" "
-                                                               className="img-responsive"/></a>
-                                    <p className='product-text'>{product.productName}</p>
-                                    <h4>{product.currentPrice}<span>{product.stockPrice}</span></h4>
-                                </div>
-                                <div className="snipcart-details">
-
-                                    <FormAddCart
-                                        key={product.productId}
-                                        productId={product.productId}/>
-
+                                <div className="snipcart-thumb" onClick={onClickProductHandler}>
+                                    <img src={product.imageUrl} alt=" "
+                                         className="img-responsive"/>
+                                    <p className='product-text text-center'>{product.productName}</p>
+                                    <h4 className='text-center text-danger'><span className='text-dark'>{(product.stockPrice)}</span>   -{product.discount}%</h4>
+                                    <h4 className='text-center'>{(product.currentPrice)}</h4>
                                 </div>
                             </div>
                         </figure>

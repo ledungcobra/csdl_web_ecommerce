@@ -6,6 +6,7 @@ import {
     USER_REGISTER_ACCOUNT_REQUEST, USER_REGISTER_ACCOUNT_SUCCESS
 } from "../constants/userContaints";
 import axios from 'axios'
+import {CART_SET_CART_ITEMS} from "../constants/cartConstants";
 
 export const login = (email, password) => async (dispatch) => {
     try {
@@ -21,6 +22,19 @@ export const login = (email, password) => async (dispatch) => {
 
         const {data} = await axios.post('/api/users/login', {email, password},
             config);
+        try{
+            const cartItems = (await axios.get(`/api/cart?id=${data.id}`)).data;
+            localStorage.setItem("cartItems",JSON.stringify(cartItems))
+            dispatch({
+                type:CART_SET_CART_ITEMS,
+                payload:cartItems
+            })
+
+        }catch (e){
+
+        }
+
+
 
         dispatch({
             type: USER_LOGIN_SUCCESS,
@@ -40,12 +54,27 @@ export const login = (email, password) => async (dispatch) => {
     }
 }
 
-export const logout = () => (dispatch) => {
+export const logout = () => (dispatch,getState) => {
+    const config = {
+        headers:{
+            contentType:'application/json'
+        }
+    }
+
+    axios.post('/api/cart/', {
+        cartItems:getState().cart.cartItems,
+        user: getState().user.userInfo.id
+    }, config).then(() => {
+        window.location.reload();
+    }).catch(e=>alert(e));
+
     dispatch({
         type: USER_LOGOUT,
         payload: {}
     });
+
     localStorage.removeItem("userInfo");
+    localStorage.removeItem("cartItems");
 }
 
 export const userRegister = (username, email, password, birthday, gender, phoneNumber) => async dispatch => {
@@ -61,6 +90,7 @@ export const userRegister = (username, email, password, birthday, gender, phoneN
         }
 
         const {data} = await axios.post('/api/users/register', {
+                name: username,
                 email,
                 password,
                 phoneNumber,

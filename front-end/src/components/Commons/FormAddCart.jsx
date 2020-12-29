@@ -12,9 +12,9 @@ const FormAddCart = ({productId}) => {
     const addToCartHandler = (e) => {
         e.preventDefault();
         dispatch(addToCart(productId));
+        window.alert("Add Successfully");
 
     }
-    console.log(productId);
     return (
         <form action="#" method="post" onSubmit={(e)=>{e.preventDefault();}}>
             <fieldset>

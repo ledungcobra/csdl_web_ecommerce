@@ -1,4 +1,5 @@
 const asyncHandler = require("express-async-handler");
+const service = require("../services/typeService");
 const {getType} = require("../services/typeService");
 
 
@@ -12,3 +13,10 @@ module.exports.getType = asyncHandler(
 
     })
 ;
+module.exports.getProductByType = asyncHandler(async(req,res)=>{
+    console.log(req.params)
+    console.log(req.query)
+    const result = await service.getProductByTypeService(req.params.type, req.query);
+    res.json(result);
+})
+

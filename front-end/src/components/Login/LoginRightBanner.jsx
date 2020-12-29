@@ -11,7 +11,8 @@ const LoginRightBanner = ({isLogin, location}) => {
 
     const [logged, setIsLogin] = useState(isLogin);
     const history = useHistory()
-    const {loading, userInfo} = useSelector(state => state.user);
+    const {loading, userInfo,error} = useSelector(state => state.user);
+
 
     if (userInfo && Object.keys(userInfo).length > 0) {
         if (location) {
@@ -21,15 +22,13 @@ const LoginRightBanner = ({isLogin, location}) => {
         }
     }
 
-
     const changeLayoutHandler = (e) => {
         setIsLogin((prev) => !prev);
     }
 
     return (
-        <div className="w3l_banner_nav_right">
+        <div className="">
             <div className="w3_login">
-
                 <h3>{isLogin ? 'Login' : 'SignUp'}</h3>
                 <div className="w3_login_module">
                     <div className="module form-module">

@@ -9,6 +9,7 @@ import NewLetter from "../components/HomeScreen/NewLetter";
 import {login} from "../actions/userActions";
 import axios from "axios";
 import {useSelector} from "react-redux";
+import BreadCrumb from "../components/Commons/BreadCrumb";
 
 const HomeScreen = () => {
 
@@ -27,7 +28,7 @@ const HomeScreen = () => {
         }, config).then(r => setProductsHotOffers(r.data)).catch(e => console.log(e));
 
     }, []);
-    const {error,loading } = useSelector(state => state.cart);
+    const {error, loading} = useSelector(state => state.cart);
 
     useEffect(() => {
         if (error) {
@@ -38,10 +39,10 @@ const HomeScreen = () => {
     }, [error])
 
     useEffect(() => {
-        console.log("first"+loading)
+        console.log("first" + loading)
         if (loading) {
             window.alert('Add product successfully');
-            console.log("second"+loading);
+            console.log("second" + loading);
         }
 
 
@@ -50,15 +51,16 @@ const HomeScreen = () => {
     return (
 
         <div>
+                <BreadCrumb title={'Home'} />
             <Row>
-                <Col>
+                <Col md={3}>
                     <div className="banner">
 
                         <LeftBanner/>
                         <div className="clearfix"/>
                     </div>
                 </Col>
-                <Col>
+                <Col md={9}>
                     <div className="banner">
                         <HotOffers offers={productHotOffers}/>
                         <div className="clearfix"/>

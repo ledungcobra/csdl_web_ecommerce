@@ -5,13 +5,12 @@ import LoginRightBanner from "../components/Login/LoginRightBanner";
 
 const Login = ({location}) => {
 
-    const isLogin = location.search.endsWith("login");
+    const isLogin = location.search.includes("login");
 
     return (
         <div>
         <BreadCrumb title={'Login'} />
             <div className="banner">
-                <LeftBanner/>
                 <LoginRightBanner isLogin = {isLogin}/>
                 <div className="clearfix"/>
 

@@ -1,7 +1,9 @@
 const express = require('express');
 const db = require("../config/db.js");
-const {getCart} = require("../services/CartService");
-const {postCart} = require("../services/CartService");
+const {getCart} = require("../controllsers/cartControlller");
+const {postCart1} = require("../controllsers/cartControlller");
+
+
 
 
 const router = new express.Router();
@@ -10,7 +12,8 @@ const router = new express.Router();
  * POST route /api/products
  */
 
-router.post('/', getCart);
-router.post('/addCart', postCart);
+router.post('/', postCart1);
+router.get('/',getCart);
+
 
 module.exports = router;

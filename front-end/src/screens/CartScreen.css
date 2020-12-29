@@ -1,0 +1,7 @@
+.d-flex>a:hover{
+    background-color:  #84c639;
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}
+.d-flex>a{
+    clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+}

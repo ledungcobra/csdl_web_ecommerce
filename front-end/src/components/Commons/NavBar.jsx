@@ -7,10 +7,13 @@ import { Col } from "react-bootstrap";
 import { Row } from "react-bootstrap";
 
 import './NavBar.css'
+import axios from "axios";
 const NavBar = () => {
 
     const dispatch = useDispatch();
     const { userInfo } = useSelector(state => state.user);
+    const { cartItems } = useSelector(state => state.cart);
+
     const [keyword, setKeyword] = useState('');
     const [loggedIn, setLoggedIn] = useState(false);
 
@@ -23,15 +26,15 @@ const NavBar = () => {
     }, [userInfo])
 
     const logoutHandler = () => {
+        //Put cart into server when user logout
+
         dispatch(logout());
-        window.location.reload();
+
+
+
     }
     return (
         <div className="agileits_header">
-            <div className="w3l_offers">
-                <a href="products.html">Today's special Offers !</a>
-            </div>
-
             <div className="w3l_search">
                 <form action="/search" method="get" onChange={() => {
                 }}>
@@ -69,6 +72,12 @@ const NavBar = () => {
 
                             </Dropdown.Toggle>
                             <Dropdown.Menu>
+                                {loggedIn ?
+                                    <Dropdown.Item>
+                                        <Link to='/InfoInvoice'>Information Invoice</Link>
+                                    </Dropdown.Item>:<Dropdown.Item></Dropdown.Item>
+
+                                }
                                 <Dropdown.Item>
                                     {loggedIn ?
                                         <Link to='/profile'>Profile</Link>
@@ -79,16 +88,17 @@ const NavBar = () => {
                                 {
                                     loggedIn && <Dropdown.Item onClick={logoutHandler}>Logout</Dropdown.Item>
                                 }
+
                             </Dropdown.Menu>
+
+
                         </Dropdown>
                     </Col>
                 </Row>
 
 
             </div>
-            <div className="w3l_header_right1">
-                <h2><a href="mail.html">Contact Us</a></h2>
-            </div>
+
             <div className="clearfix" />
         </div>
     )

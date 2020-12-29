@@ -29,10 +29,12 @@ export const addToCart = (id) => async (dispatch, getState) => {
         dispatch({
             type: CART_ADD_ITEM_SUCCESS,
             payload: {
-                product: data[0].Id_Good
+                product: data[0].Id_GD
                 , name: data[0].GD_Name,
                 image: data[0].Thumbnail_URL,
                 price: data[0].GD_Price,
+                discount: data[0].GD_Discount_Rate,
+                remain: data[0].GD_Remain,
                 qty:1
             }
         });
@@ -70,10 +72,12 @@ export const reduceToCart = (id) => async (dispatch, getState) => {
         dispatch({
             type: CART_REDUCE_ITEM,
             payload: {
-                product: data[0].Id_Good
+                product: data[0].Id_GD
                 , name: data[0].GD_Name,
                 image: data[0].Thumbnail_URL,
                 price: data[0].GD_Price,
+                discount: data[0].GD_Discount_Rate,
+                remain: data[0].GD_Remain,
                 qty:1
             }
         });
